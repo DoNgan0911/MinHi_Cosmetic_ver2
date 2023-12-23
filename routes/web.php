@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\FrontendProductController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\PaymentController;
 use App\Http\Controllers\Frontend\UserDashboardController;
 use App\Http\Controllers\Frontend\UserOrderController;
 use App\Http\Controllers\Frontend\UserProfileController;
@@ -63,7 +64,7 @@ Route::group(['middleware' => ['auth', 'verified']], function(){
 
     Route::post('customer/checkout/form-submit', [CheckOutController::class, 'checkOutFormSubmit'])->name('customer.checkout.form-submit');
     
-    Route::get('customer/cod/success', [PaymentController::class, 'codSuccess'])->name('customer.cod.success');
+    Route::get('customer/success', [PaymentController::class, 'Success'])->name('customer.cod.success');
 
 });
 

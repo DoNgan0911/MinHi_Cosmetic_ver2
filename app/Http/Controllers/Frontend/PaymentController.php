@@ -12,8 +12,12 @@ use Cart;
 class PaymentController extends Controller
 {
     //
-    public function codSuccess(){
-        return view('frontend.pages.cod-success');
+    public function Success(){
+        if(isset($_GET['partnerCode'])){
+            dd($_GET['partnerCode']);
+        }
+        
+        return view('frontend.pages.success');
         // gọi $this->storeOrder() rồi gọi clearSession rồi trả về view của payment success
     }
   
