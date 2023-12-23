@@ -2,7 +2,8 @@
 
 namespace App\DataTables;
 
-use App\Models\Order;
+use App\Models\Customer;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -12,7 +13,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class OrderDataTable extends DataTable
+class CustomerDataTable extends DataTable
 {
     /**
      * Build the DataTable class.
@@ -22,32 +23,32 @@ class OrderDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', function($query){
-                $showBtn = "<a href='".route('manage_order.show', $query->id)."' class='btn btn-primary'>Chi tiết</a>";
-                // $deleteBtn = "<a href='".route('manage_order.destroy', $query->id)."' class='btn btn-danger ml-2 delete-item'>D</a>";
-                // $statusBtn = "<a href='".route('manage_order.destroy', $query->id)."' class='btn btn-warning ml-2'>D</a>";
+        ->addColumn('action', function($query){
+            // $deleteBtn = "<a href='".route('manage_order.destroy', $query->id)."' class='btn btn-danger ml-2 delete-item'>D</a>";
+            // $statusBtn = "<a href='".route('manage_order.destroy', $query->id)."' class='btn btn-warning ml-2'>D</a>";
 
-                return $showBtn ; 
-            })
-            ->addColumn('customer', function($query){
-                return $query->user->name;
-            })
-            ->addColumn('date', function($query){
-                return date('d-M-Y', strtotime($query->created_at));
-            })
-            ->addColumn('status', function($query){
-                return "<span class='badge bg-warning'>$query->status </span>" ;
-            })
-            ->rawColumns(['status', 'action'])
-            ->setRowId('id');
+            // return $showBtn ; 
+        })
+        // ->addColumn('customer', function($query){
+        //     return $query->user->name;
+        // })
+        // ->addColumn('date', function($query){
+        //     return date('d-M-Y', strtotime($query->created_at));
+        // })
+        // ->addColumn('status', function($query){
+        //     return "<span class='badge bg-warning'>$query->status </span>" ;
+        // })
+        ->rawColumns(['status', 'action'])
+        ->setRowId('id');
     }
 
     /**
      * Get the query source of dataTable.
      */
-    public function query(Order $model): QueryBuilder
+    public function query(User $model): QueryBuilder
     {
-        return $model->newQuery();
+        return $model->newQuery()
+                 ->where('role', '=', 'customer');
     }
 
     /**
@@ -56,7 +57,7 @@ class OrderDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('order-table')
+                    ->setTableId('customer-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     //->dom('Bfrtip')
@@ -80,18 +81,17 @@ class OrderDataTable extends DataTable
         return [
             Column::make('id'),
             Column::make('name'),
-            Column::make('date'),
             Column::make('address'),
             Column::make('phone'),
-            Column::make('status'),
-            Column::make('enable'),
+            Column::make('postcode'),
+            Column::make('email'),
+            Column::make('birthday'),
             Column::make('total'),
-            Column::make('payment_method'),
-            Column::make('user_id'),
+            Column::make('enable'),
             Column::computed('action')
             ->exportable(false)
             ->printable(false)
-            ->width(260)
+            ->width(60)
             ->addClass('text-center')
         ];
     }
@@ -101,6 +101,6 @@ class OrderDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'Order_' . date('YmdHis');
+        return 'Customer_' . date('YmdHis');
     }
 }

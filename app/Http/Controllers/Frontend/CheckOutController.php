@@ -111,6 +111,7 @@ class CheckOutController extends Controller
             }
         }
     }
+    
     public function storeOrder(Request $request)
     {
         $order = new Order();

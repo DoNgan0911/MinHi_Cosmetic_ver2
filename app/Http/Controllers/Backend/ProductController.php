@@ -105,7 +105,7 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->quantity = $request->quantity;
         $product->price = $request->price;
-        $product->enable = $request->price;
+        $product->enable = $request->enable;
         $product->save();
         
         toastr('Update Successfully', 'success');

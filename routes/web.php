@@ -12,6 +12,7 @@ use App\Http\Controllers\Frontend\UserDashboardController;
 use App\Http\Controllers\Frontend\UserOrderController;
 use App\Http\Controllers\Frontend\UserProfileController;
 use App\Http\Controllers\Frontend\PaymentController;
+use App\Http\Controllers\Frontend\ReviewController;
 
 use Gloudemans\Shoppingcart\Facades\Cart;
 
@@ -61,10 +62,11 @@ Route::group(['middleware' => ['auth', 'verified']], function(){
 
 // bấm vào thanh toán: 
     Route::get('customer/checkout', [CheckOutController::class, 'index'])->name('customer.checkout');
-
     Route::post('customer/checkout/form-submit', [CheckOutController::class, 'checkOutFormSubmit'])->name('customer.checkout.form-submit');
-    
     Route::get('customer/cod/success', [PaymentController::class, 'codSuccess'])->name('customer.cod.success');
+
+// route cho feedback khách hàng
+Route::post('customer/review', [ReviewController::class, 'create'])->name('customer.review.create'); 
 
 });
 

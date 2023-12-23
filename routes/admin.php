@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\Backend\CustomerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
@@ -36,11 +37,12 @@ Route::post('admin/profile/update', [ProfileController::class, 'updateProfile'])
 // MANAGE PRODUCTS
 Route::resource('admin/manage_product', ProductController::class);
 
-Route::resource('paypal-setting', PaypalSettingController::class);
-
 // Manage Order
 Route::resource('admin/manage_order', OrderController::class);
 Route::get('admin/order-status', [OrderController::class, 'changeOrderStatus'])->name('admin.order.status');
+
+// Quản lý khách hàng
+Route::resource('admin/manage_customer',  CustomerController::class);
 
 
 

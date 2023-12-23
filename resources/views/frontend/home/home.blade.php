@@ -101,7 +101,7 @@
                                                     <option>select 4</option>
                                                 </select>
                                             </div>
-                                            <div class="col-xl-6 col-sm-6">
+                                            {{-- <div class="col-xl-6 col-sm-6">
                                                 <h5 class="mb-2">select:</h5>
                                                 <select class="select_2" name="state">
                                                     <option>default select</option>
@@ -110,7 +110,7 @@
                                                     <option>select 3</option>
                                                     <option>select 4</option>
                                                 </select>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                     <ul class="wsus__button_area">
@@ -142,7 +142,7 @@
       PRODUCT MODAL VIEW END
     ===========================-->
 
-
+    
     <!--============================
         BANNER PART 2 START
     ==============================-->
@@ -150,7 +150,211 @@
     <!--============================
         BANNER PART 2 END
     ==============================-->
+    <section id="wsus__product_page">
+        <div class="container">
+            <div class="row">
+                {{-- <div class="col-xl-12">
+                    <div class="wsus__pro_page_bammer">
+                        <div class="wsus__pro_page_bammer_text">
+                            <div class="wsus__pro_page_bammer_text_center">
+                                <p>up to <span>70% off</span></p>
+                                <h5>wemen's jeans Collection</h5>
+                                <h3>fashion for wemen's</h3>
+                                <a href="#" class="add_cart">Discover Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4">
+                    <div class="wsus__sidebar_filter ">
+                        <p>filter</p>
+                        <span class="wsus__filter_icon">
+                            <i class="far fa-minus" id="minus"></i>
+                            <i class="far fa-plus" id="plus"></i>
+                        </span>
+                    </div>
+                    <div class="wsus__product_sidebar" id="sticky_sidebar">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Danh mục
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li><a href="#">Nước tẩy trang</a></li>
+                                            <li><a href="#">Sữa rửa mặt</a></li>
+                                            <li><a href="#">Kem chống nắng</a></li>
+                                            <li><a href="#">Kem dưỡng ẩm</a></li>
+                                            <li><a href="#">Serum</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Giá
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="price_ranger">
+                                            <input type="hidden" id="slider_range" class="flat-slider" />
+                                            <button type="submit" class="common_btn">Lọc</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            
+                            
+                        </div>
+                    </div>
+                </div> --}}
+                <div class="col-xl-9 col-lg-8">
+                    <div class="row">
+                        <div class="col-xl-12 d-none d-md-block mt-md-4 mt-lg-0">
+                            <div class="wsus__product_topbar">
+                                <div class="wsus__product_topbar_left">
+                                    <div class="nav nav-pills" id="v-pills-tab" role="tablist"
+                                        aria-orientation="vertical">
+                                        <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
+                                            data-bs-target="#v-pills-home" type="button" role="tab"
+                                            aria-controls="v-pills-home" aria-selected="true">
+                                            <i class="fas fa-th"></i>
+                                        </button>
+                                        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
+                                            data-bs-target="#v-pills-profile" type="button" role="tab"
+                                            aria-controls="v-pills-profile" aria-selected="false">
+                                            <i class="fas fa-list-ul"></i>
+                                        </button>
+                                    </div>
+                                    {{-- <div class="wsus__topbar_select">
+                                        <select class="select_2" name="state">
+                                            <option>default shorting</option>
+                                            <option>short by rating</option>
+                                            <option>short by latest</option>
+                                            <option>low to high </option>
+                                            <option>high to low</option>
+                                        </select>
+                                    </div> --}}
+                                </div>
+                                {{-- <div class="wsus__topbar_select">
+                                    <select class="select_2" name="state">
+                                        <option>show 12</option>
+                                        <option>show 15</option>
+                                        <option>show 18</option>
+                                        <option>show 21</option>
+                                    </select>
+                                </div> --}}
+                            </div>
+                        </div>
+                        <div class="tab-content" id="v-pills-tabContent">
+                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                                aria-labelledby="v-pills-home-tab">
+                                <div class="row">
+                                    <h2 style="text-align: center">Sữa rửa mặt</h2>
+                                    @foreach ($products as $product)
+                                        <div class="col-xl-4  col-sm-6">
+                                            <div class="wsus__product_item">
+                                                <a class="wsus__pro_link" href="product_details.html">
+                                                    <img src="{{ asset($product->link_photo) }}" alt="product"
+                                                        class="img-fluid w-100 img_1" />
+                                                </a>
+                                                <ul class="wsus__single_pro_icon">
+                                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                                                class="far fa-eye"></i></a></li>
+                                                    <li><a href="#"><i class="far fa-heart"></i></a></li>
+                                                    <li><a href="#"><i class="far fa-random"></i></a>
+                                                </ul>
+                                                <div class="wsus__product_details">
+                                                    <a  href="{{ route('product-detail',$product->name) }}">{{ $product->type }} {{ $product->name }}</a>
+                                                    <a class="wsus__pro_name" href="#">{{ $product->skin_problem }}</a>
+                                                    <p class="wsus__price">{{ $product->price }} vnd</p>
 
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    @endforeach
+                             
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                                aria-labelledby="v-pills-profile-tab">
+                                <div class="row">
+                                    @foreach ($products as $product)
+                                    <div class="col-xl-12">
+                                        <div class="wsus__product_item wsus__list_view">
+                                            <a class="wsus__pro_link" href="product_details.html">
+                                                <img src="" alt="product"
+                                                    class="img-fluid w-100 img_1" />
+                                            </a>
+                                            <div class="wsus__product_details">
+                                                <a class="wsus__category" href="#">fashion </a>
+                                                <p class="wsus__pro_rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <span>(17 review)</span>
+                                                </p>
+                                                <a class="wsus__pro_name" href="#">{{ $product->name }}</a>
+                                                <p class="wsus__price">$159 <del>$200</del></p>
+                                                <p class="list_description">Ultrices eros in cursus turpis massa cursus
+                                                    mattis. Volutpat ac tincidunt vitae semper quis lectus. Aliquam id
+                                                    diam maecenas ultricies… </p>
+                                                <ul class="wsus__single_pro_icon">
+                                                    <li><a class="add_cart" href="#">add to cart</a></li>
+                                                    <li><a href="#"><i class="far fa-heart"></i></a></li>
+                                                    <li><a href="#"><i class="far fa-random"></i></a>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    @endforeach
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12">
+                    {{-- <section id="pagination">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link page_active" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section> --}}
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!--============================
         FLASH SELL START
@@ -791,5 +995,5 @@
         HOME BLOGS END
     ==============================-->
 
-
+@include('frontend.layouts.footer')
 @endsection

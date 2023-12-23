@@ -167,7 +167,6 @@
         @if($errors->any())
             @foreach ($errors->all() as $error )
                 toastr.console.error("{{ $error }}");
-                
             @endforeach
         @endif
     </script>

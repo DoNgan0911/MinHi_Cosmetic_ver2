@@ -1,7 +1,7 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
-        <a href="index.html">Minhi_Cosmetic</a>
+        <a href="{{ route('admin.dashboard') }}">Minhi_Cosmetic</a>
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
         <a href="index.html">St</a>
@@ -9,7 +9,7 @@
       <ul class="sidebar-menu">
         <li class="menu-header">Dashboard</li>
         <li class="dropdown active">
-          <a href="{{ route('admin.dashboard') }}" class="nav-link "><i class="fas fa-fire"></i><span>Dashboard</span></a>
+          <a href="{{ route('admin.dashboard') }}" class="nav-link "><i class="fas fa-fire"></i>Trang chủ</a>
         </li>
         <li class="menu-header">Starter</li>
         {{-- <li class="dropdown">
@@ -19,15 +19,21 @@
           </ul>
         </li> --}}
         <li class="dropdown">
-          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Manage Products</span></a>
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Quản lý sản phẩm</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="{{route('manage_product.index') }}">Product</a></li>
+            <li><a class="nav-link" href="{{route('manage_product.index') }}">Sản phẩm</a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Manage Order</span></a>
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Quản lý đơn hàng</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="{{route('manage_order.index') }}">Order</a></li>
+            <li><a class="nav-link" href="{{route('manage_order.index') }}">Đơn hàng</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Quản lý khách hàng</span></a>
+          <ul class="dropdown-menu">
+            <li><a class="nav-link" href="{{route('manage_customer.index') }}">Khách hàng</a></li>
           </ul>
         </li>
         {{-- <li class="dropdown">

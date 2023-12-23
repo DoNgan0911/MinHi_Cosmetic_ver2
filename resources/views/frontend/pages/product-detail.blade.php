@@ -47,7 +47,6 @@
                                     </a>
                                     <ul class='exzoom_img_ul'>
                                         <li><img class="zoom ing-fluid w-100" src="{{ asset($product->link_photo) }}" alt="product"></li>
-    
                                     </ul>
                                 </div>
                                 <div class="exzoom_nav"></div>
@@ -161,7 +160,7 @@
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="pills-contact-tab2" data-bs-toggle="pill"
                                         data-bs-target="#pills-contact2" type="button" role="tab"
-                                        aria-controls="pills-contact2" aria-selected="false" style="font-size: 14px">Đánh giá từ khách hàng</button>
+                                        aria-controls="pills-contact2" aria-selected="false">Đánh giá sản phẩm</button>
                                 </li>
                                 
                             </ul>
@@ -197,6 +196,178 @@
                                             </div>
                                         </div>
                                         
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-contact2" role="tabpanel"
+                                    aria-labelledby="pills-contact-tab2">
+                                    <div class="wsus__pro_det_review">
+                                        <div class="wsus__pro_det_review_single">
+                                            <div class="row">
+                                                <div class="col-xl-8 col-lg-7">
+                                                    <div class="wsus__comment_area">
+                                                        <h4>Reviews <span>02</span></h4>
+                                                        <div class="wsus__main_comment">
+                                                            <div class="wsus__comment_img">
+                                                                <img src="images/client_img_3.jpg" alt="user"
+                                                                    class="img-fluid w-100">
+                                                            </div>
+                                                            <div class="wsus__comment_text reply">
+                                                                <h6>Shopnil mahadi <span>4 <i
+                                                                            class="fas fa-star"></i></span></h6>
+                                                                <span>09 Jul 2021</span>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                    elit.
+                                                                    Cupiditate sint molestiae eos? Officia, fuga eaque.
+                                                                </p>
+                                                                <ul class="">
+                                                                    <li><img src="images/headphone_1.jpg" alt="product"
+                                                                            class="img-fluid w-100"></li>
+                                                                    <li><img src="images/headphone_2.jpg" alt="product"
+                                                                            class="img-fluid w-100"></li>
+                                                                    <li><img src="images/kids_1.jpg" alt="product"
+                                                                            class="img-fluid w-100"></li>
+                                                                </ul>
+                                                                <a href="#" data-bs-toggle="collapse"
+                                                                    data-bs-target="#flush-collapsetwo">reply</a>
+                                                                <div class="accordion accordion-flush"
+                                                                    id="accordionFlushExample2">
+                                                                    <div class="accordion-item">
+                                                                        <div id="flush-collapsetwo"
+                                                                            class="accordion-collapse collapse"
+                                                                            aria-labelledby="flush-collapsetwo"
+                                                                            data-bs-parent="#accordionFlushExample">
+                                                                            <div class="accordion-body">
+                                                                                <form>
+                                                                                    <div
+                                                                                        class="wsus__riv_edit_single text_area">
+                                                                                        <i class="far fa-edit"></i>
+                                                                                        <textarea cols="3" rows="1"
+                                                                                            placeholder="Your Text"></textarea>
+                                                                                    </div>
+                                                                                    <button type="submit"
+                                                                                        class="common_btn">submit</button>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="wsus__main_comment">
+                                                            <div class="wsus__comment_img">
+                                                                <img src="images/client_img_1.jpg" alt="user"
+                                                                    class="img-fluid w-100">
+                                                            </div>
+                                                            <div class="wsus__comment_text reply">
+                                                                <h6>Smith jhon <span>5 <i
+                                                                            class="fas fa-star"></i></span>
+                                                                </h6>
+                                                                <span>09 Jul 2021</span>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                    elit.
+                                                                    Cupiditate sint molestiae eos? Officia, fuga eaque.
+                                                                </p>
+                                                                <a href="#" data-bs-toggle="collapse"
+                                                                    data-bs-target="#flush-collapsetwo2">reply</a>
+                                                                <div class="accordion accordion-flush"
+                                                                    id="accordionFlushExample2">
+                                                                    <div class="accordion-item">
+                                                                        <div id="flush-collapsetwo2"
+                                                                            class="accordion-collapse collapse"
+                                                                            aria-labelledby="flush-collapsetwo"
+                                                                            data-bs-parent="#accordionFlushExample">
+                                                                            <div class="accordion-body">
+                                                                                <form>
+                                                                                    <div
+                                                                                        class="wsus__riv_edit_single text_area">
+                                                                                        <i class="far fa-edit"></i>
+                                                                                        <textarea cols="3" rows="1"
+                                                                                            placeholder="Your Text"></textarea>
+                                                                                    </div>
+                                                                                    <button type="submit"
+                                                                                        class="common_btn">submit</button>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div id="pagination">
+                                                            <nav aria-label="Page navigation example">
+                                                                <ul class="pagination">
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#"
+                                                                            aria-label="Previous">
+                                                                            <i class="fas fa-chevron-left"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="page-item"><a
+                                                                            class="page-link page_active" href="#">1</a>
+                                                                    </li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">2</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">3</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">4</a></li>
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#" aria-label="Next">
+                                                                            <i class="fas fa-chevron-right"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </nav>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-lg-5 mt-4 mt-lg-0">
+                                                    <div class="wsus__post_comment rev_mar" id="sticky_sidebar3">
+                                                        <h4>write a Review</h4>
+                                                        <form action="{{ route('customer.review.create') }}" enctype="multipart/form-data" method="POST">
+                                                            @csrf
+                                                            <p class="rating">
+                                                                <span>select your rating : </span>
+                                                               
+                                                            </p>
+                                                           
+                                                            <div class="row">
+                                                                
+                                                                <div class="col-xl-12 mb-4">
+                                                                    <div class="wsus__single_com">
+                                                                        <select name="rating" id="" class="form-control">
+                                                                            <option value="">Select</option>
+                                                                            <option value="1">1</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4</option>
+                                                                            <option value="5">5</option>
+
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                               
+                                                                <div class="col-xl-12">
+                                                                    <div class="col-xl-12">
+                                                                        <div class="wsus__single_com">
+                                                                            <textarea cols="3" rows="3" name="review"
+                                                                                placeholder="Write your review"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="img_upload">
+                                                                <div class="">
+                                                                    <input type="file" name="" id="" name="image[]">
+                                                                </div>
+                                                            </div>
+                                                            <button class="common_btn" type="submit">submit
+                                                                review</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                
