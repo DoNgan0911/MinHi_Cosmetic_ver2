@@ -15,10 +15,10 @@
           <div class="col-12 ">
             <div class="card">
               <div class="card-header">
-                <h4>Tất cả sản phẩm</h4>
-                <div class="card-header-action">
-                    <a href="{{route('manage_product.create')}}" class="btn btn-primary">Thêm sản phẩm</a>
-                </div>
+                <h4>Tất cả khách hàng</h4>
+                {{-- <div class="card-header-action">
+                    <a href="{{route('manage_customer.create')}}" class="btn btn-primary">Thêm sản phẩm</a>
+                </div> --}}
               </div>
               <div class="card-body">
                 {{-- sử dụng DataTables để render bảng dữ liệu --}}
