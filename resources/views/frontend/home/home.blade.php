@@ -155,7 +155,7 @@
     <!--============================
         FLASH SELL START
     ==============================-->
-    {{-- @include('frontend.home.sections.flash-sale') --}}
+    @include('frontend.home.sections.flash-sale')
     <!--============================
         FLASH SELL END
     ==============================-->
@@ -164,7 +164,7 @@
     <!--============================
        MONTHLY TOP PRODUCT START
     ==============================-->
-    {{-- @include('frontend.home.sections.top-category-product') --}}
+    @include('frontend.home.sections.top-category-product')
     <!--============================
        MONTHLY TOP PRODUCT END
     ==============================-->
@@ -173,7 +173,7 @@
     <!--============================
         BRAND SLIDER START
     ==============================-->
-    {{-- @include('frontend.home.sections.brand-slider') --}}
+    @include('frontend.home.sections.brand-slider')
     <!--============================
         BRAND SLIDER END
     ==============================-->
@@ -182,7 +182,7 @@
     <!--============================
         SINGLE BANNER START
     ==============================-->
-    {{-- @include('frontend.home.sections.single-banner') --}}
+    @include('frontend.home.sections.single-banner')
     <!--============================
         SINGLE BANNER END  
     ==============================-->
@@ -191,7 +191,7 @@
     <!--============================
         HOT DEALS START
     ==============================-->
-    {{-- @include('frontend.home.sections.hot-deals') --}}
+    @include('frontend.home.sections.hot-deals')
     <!--============================
         HOT DEALS END  
     ==============================-->
@@ -200,7 +200,7 @@
     <!--============================
         ELECTRONIC PART START  
     ==============================-->
-    {{-- @include('frontend.home.sections.category-product-slider-one') --}}
+    @include('frontend.home.sections.category-product-slider-one')
     <!--============================
         ELECTRONIC PART END  
     ==============================-->
@@ -209,7 +209,7 @@
     <!--============================
         ELECTRONIC PART START  
     ==============================-->
-    {{-- <section id="wsus__electronic2">
+    <section id="wsus__electronic2">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -408,7 +408,7 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
     <!--============================
         LARGE BANNER  END  
     ==============================-->
@@ -417,7 +417,7 @@
     <!--============================
         WEEKLY BEST ITEM START  
     ==============================-->
-    {{-- <section id="wsus__weekly_best" class="home2_wsus__weekly_best_2 ">
+    <section id="wsus__weekly_best" class="home2_wsus__weekly_best_2 ">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-sm-6">
@@ -652,7 +652,7 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
     <!--============================
         WEEKLY BEST ITEM END 
     ==============================-->

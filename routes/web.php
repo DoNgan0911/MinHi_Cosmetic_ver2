@@ -72,8 +72,8 @@ Route::get('/products', [ProductController::class,'show_list'])->name('products_
 Route::get('/products/{id}', [DetailProductController::class, 'show'])->name('show_detail_product');
 
 // Xử lý Cus viết Feedback
-//Route::get('/{product}/feedback', [DetailProductController::class, 'show'])->name('feedBackCus');
-//Route::post('/{product}/feedback', [DetailProductController::class, 'storeFeedback'])->name('submitFeedback');
+Route::get('/{product}/feedback', [DetailProductController::class, 'show'])->name('feedBackCus');
+Route::post('/{product}/feedback', [DetailProductController::class, 'storeFeedback'])->name('submitFeedback');
 
 
 
