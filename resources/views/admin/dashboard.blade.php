@@ -64,12 +64,12 @@
           </div>
         </div>
       </div>
-    </div>                  
+    </div>
   </div>
-  {{-- <div class="row">
-    <div class="col-lg-8 col-md-12 col-12 col-sm-12">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-12 col-sm-12">
       <div class="card">
-        <div class="card-header">
+        {{-- <div class="card-header">
           <h4>Statistics</h4>
           <div class="card-header-action">
             <div class="btn-group">
@@ -77,10 +77,10 @@
               <a href="#" class="btn">Month</a>
             </div>
           </div>
-        </div>
+        </div> --}}
         <div class="card-body">
           <canvas id="myChart" height="182"></canvas>
-          <div class="statistic-details mt-sm-4">
+          {{-- <div class="statistic-details mt-sm-4">
             <div class="statistic-details-item">
               <span class="text-muted"><span class="text-primary"><i class="fas fa-caret-up"></i></span> 7%</span>
               <div class="detail-value">$243</div>
@@ -101,23 +101,24 @@
               <div class="detail-value">$92,142</div>
               <div class="detail-name">This Year's Sales</div>
             </div>
-          </div>
+          </div> --}}
         </div>
       </div>
     </div>
-    <div class="col-lg-4 col-md-12 col-12 col-sm-12">
+    {{-- <div class="col-lg-4 col-md-12 col-12 col-sm-12">
       <div class="card">
         <div class="card-header">
           <h4>Recent Activities</h4>
         </div>
-        <div class="card-body">             
+        <div class="card-body">
           <ul class="list-unstyled list-unstyled-border">
             <li class="media">
               <img class="mr-3 rounded-circle" width="50" src="assets/img/avatar/avatar-1.png" alt="avatar">
               <div class="media-body">
                 <div class="float-right text-primary">Now</div>
                 <div class="media-title">Farhan A Mujib</div>
-                <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
+                <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                  scelerisque ante sollicitudin.</span>
               </div>
             </li>
             <li class="media">
@@ -125,7 +126,8 @@
               <div class="media-body">
                 <div class="float-right">12m</div>
                 <div class="media-title">Ujang Maman</div>
-                <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
+                <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                  scelerisque ante sollicitudin.</span>
               </div>
             </li>
             <li class="media">
@@ -133,7 +135,8 @@
               <div class="media-body">
                 <div class="float-right">17m</div>
                 <div class="media-title">Rizal Fakhri</div>
-                <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
+                <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                  scelerisque ante sollicitudin.</span>
               </div>
             </li>
             <li class="media">
@@ -141,7 +144,8 @@
               <div class="media-body">
                 <div class="float-right">21m</div>
                 <div class="media-title">Alfa Zulkarnain</div>
-                <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
+                <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                  scelerisque ante sollicitudin.</span>
               </div>
             </li>
           </ul>
@@ -152,9 +156,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
   </div>
-  <div class="row">
+  {{-- <div class="row">
     <div class="col-lg-6 col-md-12 col-12 col-sm-12">
       <div class="card">
         <div class="card-body pt-2 pb-2">
@@ -171,25 +175,29 @@
           <div class="row pb-2">
             <div class="col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
               <div class="avatar-item mb-0">
-                <img alt="image" src="assets/img/avatar/avatar-5.png" class="img-fluid" data-toggle="tooltip" title="Alfa Zulkarnain">
+                <img alt="image" src="assets/img/avatar/avatar-5.png" class="img-fluid" data-toggle="tooltip"
+                  title="Alfa Zulkarnain">
                 <div class="avatar-badge" title="Editor" data-toggle="tooltip"><i class="fas fa-wrench"></i></div>
               </div>
             </div>
             <div class="col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
               <div class="avatar-item mb-0">
-                <img alt="image" src="assets/img/avatar/avatar-4.png" class="img-fluid" data-toggle="tooltip" title="Egi Ferdian">
+                <img alt="image" src="assets/img/avatar/avatar-4.png" class="img-fluid" data-toggle="tooltip"
+                  title="Egi Ferdian">
                 <div class="avatar-badge" title="Admin" data-toggle="tooltip"><i class="fas fa-cog"></i></div>
               </div>
             </div>
             <div class="col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
               <div class="avatar-item mb-0">
-                <img alt="image" src="assets/img/avatar/avatar-1.png" class="img-fluid" data-toggle="tooltip" title="Jaka Ramadhan">
+                <img alt="image" src="assets/img/avatar/avatar-1.png" class="img-fluid" data-toggle="tooltip"
+                  title="Jaka Ramadhan">
                 <div class="avatar-badge" title="Author" data-toggle="tooltip"><i class="fas fa-pencil-alt"></i></div>
               </div>
             </div>
             <div class="col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
               <div class="avatar-item mb-0">
-                <img alt="image" src="assets/img/avatar/avatar-2.png" class="img-fluid" data-toggle="tooltip" title="Ryan">
+                <img alt="image" src="assets/img/avatar/avatar-2.png" class="img-fluid" data-toggle="tooltip"
+                  title="Ryan">
                 <div class="avatar-badge" title="Admin" data-toggle="tooltip"><i class="fas fa-cog"></i></div>
               </div>
             </div>
@@ -209,15 +217,17 @@
             <div class="text-small float-right font-weight-bold text-muted">2,100</div>
             <div class="font-weight-bold mb-1">Google</div>
             <div class="progress" data-height="3">
-              <div class="progress-bar" role="progressbar" data-width="80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>                          
+              <div class="progress-bar" role="progressbar" data-width="80%" aria-valuenow="80" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
           </div>
 
           <div class="mb-4">
             <div class="text-small float-right font-weight-bold text-muted">1,880</div>
             <div class="font-weight-bold mb-1">Facebook</div>
             <div class="progress" data-height="3">
-              <div class="progress-bar" role="progressbar" data-width="67%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" data-width="67%" aria-valuenow="25" aria-valuemin="0"
+                aria-valuemax="100"></div>
             </div>
           </div>
 
@@ -225,7 +235,8 @@
             <div class="text-small float-right font-weight-bold text-muted">1,521</div>
             <div class="font-weight-bold mb-1">Bing</div>
             <div class="progress" data-height="3">
-              <div class="progress-bar" role="progressbar" data-width="58%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" data-width="58%" aria-valuenow="25" aria-valuemin="0"
+                aria-valuemax="100"></div>
             </div>
           </div>
 
@@ -233,7 +244,8 @@
             <div class="text-small float-right font-weight-bold text-muted">884</div>
             <div class="font-weight-bold mb-1">Yahoo</div>
             <div class="progress" data-height="3">
-              <div class="progress-bar" role="progressbar" data-width="36%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" data-width="36%" aria-valuenow="25" aria-valuemin="0"
+                aria-valuemax="100"></div>
             </div>
           </div>
 
@@ -241,7 +253,8 @@
             <div class="text-small float-right font-weight-bold text-muted">473</div>
             <div class="font-weight-bold mb-1">Kodinger</div>
             <div class="progress" data-height="3">
-              <div class="progress-bar" role="progressbar" data-width="28%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" data-width="28%" aria-valuenow="25" aria-valuemin="0"
+                aria-valuemax="100"></div>
             </div>
           </div>
 
@@ -249,7 +262,8 @@
             <div class="text-small float-right font-weight-bold text-muted">418</div>
             <div class="font-weight-bold mb-1">Multinity</div>
             <div class="progress" data-height="3">
-              <div class="progress-bar" role="progressbar" data-width="20%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" data-width="20%" aria-valuenow="25" aria-valuemin="0"
+                aria-valuemax="100"></div>
             </div>
           </div>
         </div>
@@ -263,17 +277,20 @@
             <div class="col text-center">
               <div class="browser browser-chrome"></div>
               <div class="mt-2 font-weight-bold">Chrome</div>
-              <div class="text-muted text-small"><span class="text-primary"><i class="fas fa-caret-up"></i></span> 48%</div>
+              <div class="text-muted text-small"><span class="text-primary"><i class="fas fa-caret-up"></i></span> 48%
+              </div>
             </div>
             <div class="col text-center">
               <div class="browser browser-firefox"></div>
               <div class="mt-2 font-weight-bold">Firefox</div>
-              <div class="text-muted text-small"><span class="text-primary"><i class="fas fa-caret-up"></i></span> 26%</div>
+              <div class="text-muted text-small"><span class="text-primary"><i class="fas fa-caret-up"></i></span> 26%
+              </div>
             </div>
             <div class="col text-center">
               <div class="browser browser-safari"></div>
               <div class="mt-2 font-weight-bold">Safari</div>
-              <div class="text-muted text-small"><span class="text-danger"><i class="fas fa-caret-down"></i></span> 14%</div>
+              <div class="text-muted text-small"><span class="text-danger"><i class="fas fa-caret-down"></i></span> 14%
+              </div>
             </div>
             <div class="col text-center">
               <div class="browser browser-opera"></div>
@@ -283,7 +300,8 @@
             <div class="col text-center">
               <div class="browser browser-internet-explorer"></div>
               <div class="mt-2 font-weight-bold">IE</div>
-              <div class="text-muted text-small"><span class="text-primary"><i class="fas fa-caret-up"></i></span> 5%</div>
+              <div class="text-muted text-small"><span class="text-primary"><i class="fas fa-caret-up"></i></span> 5%
+              </div>
             </div>
           </div>
         </div>
@@ -319,7 +337,7 @@
             <div class="summary-info">
               <h4>$1,053</h4>
               <div class="text-muted">Sold 3 items on 2 customers</div>
-              <div class="d-block mt-2">                              
+              <div class="d-block mt-2">
                 <a href="#">View All</a>
               </div>
             </div>
@@ -333,7 +351,9 @@
                   <div class="media-body">
                     <div class="media-right">$405</div>
                     <div class="media-title"><a href="#">PlayStation 9</a></div>
-                    <div class="text-muted text-small">by <a href="#">Hasan Basri</a> <div class="bullet"></div> Sunday</div>
+                    <div class="text-muted text-small">by <a href="#">Hasan Basri</a>
+                      <div class="bullet"></div> Sunday
+                    </div>
                   </div>
                 </li>
                 <li class="media">
@@ -343,7 +363,8 @@
                   <div class="media-body">
                     <div class="media-right">$499</div>
                     <div class="media-title"><a href="#">RocketZ</a></div>
-                    <div class="text-muted text-small">by <a href="#">Hasan Basri</a> <div class="bullet"></div> Sunday
+                    <div class="text-muted text-small">by <a href="#">Hasan Basri</a>
+                      <div class="bullet"></div> Sunday
                     </div>
                   </div>
                 </li>
@@ -354,7 +375,8 @@
                   <div class="media-body">
                     <div class="media-right">$149</div>
                     <div class="media-title"><a href="#">Xiaomay Readme 4.0</a></div>
-                    <div class="text-muted text-small">by <a href="#">Kusnaedi</a> <div class="bullet"></div> Tuesday
+                    <div class="text-muted text-small">by <a href="#">Kusnaedi</a>
+                      <div class="bullet"></div> Tuesday
                     </div>
                   </div>
                 </li>
@@ -370,7 +392,7 @@
             <a href="#" class="btn btn-primary">View All</a>
           </div>
         </div>
-        <div class="card-body">             
+        <div class="card-body">
           <ul class="list-unstyled list-unstyled-border">
             <li class="media">
               <div class="custom-control custom-checkbox">
@@ -381,7 +403,8 @@
               <div class="media-body">
                 <div class="badge badge-pill badge-danger mb-1 float-right">Not Finished</div>
                 <h6 class="media-title"><a href="#">Redesign header</a></h6>
-                <div class="text-small text-muted">Alfa Zulkarnain <div class="bullet"></div> <span class="text-primary">Now</span></div>
+                <div class="text-small text-muted">Alfa Zulkarnain <div class="bullet"></div> <span
+                    class="text-primary">Now</span></div>
               </div>
             </li>
             <li class="media">
@@ -398,7 +421,7 @@
             </li>
             <li class="media">
               <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="cbx-3" >
+                <input type="checkbox" class="custom-control-input" id="cbx-3">
                 <label class="custom-control-label" for="cbx-3"></label>
               </div>
               <img class="mr-3 rounded-circle" width="50" src="assets/img/avatar/avatar-2.png" alt="avatar">
@@ -469,7 +492,7 @@
                   <th>Action</th>
                 </tr>
               </thead>
-              <tbody>                         
+              <tbody>
                 <tr>
                   <td>
                     Introduction Laravel 5
@@ -480,11 +503,15 @@
                     </div>
                   </td>
                   <td>
-                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png" alt="avatar"
+                        width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
                   </td>
                   <td>
-                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i
+                        class="fas fa-pencil-alt"></i></a>
+                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"
+                      data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?"
+                      data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
                   </td>
                 </tr>
                 <tr>
@@ -497,11 +524,15 @@
                     </div>
                   </td>
                   <td>
-                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png" alt="avatar"
+                        width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
                   </td>
                   <td>
-                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i
+                        class="fas fa-pencil-alt"></i></a>
+                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"
+                      data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?"
+                      data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
                   </td>
                 </tr>
                 <tr>
@@ -514,11 +545,15 @@
                     </div>
                   </td>
                   <td>
-                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png" alt="avatar"
+                        width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
                   </td>
                   <td>
-                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i
+                        class="fas fa-pencil-alt"></i></a>
+                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"
+                      data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?"
+                      data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
                   </td>
                 </tr>
                 <tr>
@@ -531,11 +566,15 @@
                     </div>
                   </td>
                   <td>
-                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png" alt="avatar"
+                        width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
                   </td>
                   <td>
-                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i
+                        class="fas fa-pencil-alt"></i></a>
+                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"
+                      data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?"
+                      data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
                   </td>
                 </tr>
                 <tr>
@@ -548,11 +587,15 @@
                     </div>
                   </td>
                   <td>
-                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png" alt="avatar"
+                        width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
                   </td>
                   <td>
-                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i
+                        class="fas fa-pencil-alt"></i></a>
+                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"
+                      data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?"
+                      data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
                   </td>
                 </tr>
                 <tr>
@@ -565,11 +608,15 @@
                     </div>
                   </td>
                   <td>
-                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png" alt="avatar"
+                        width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
                   </td>
                   <td>
-                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i
+                        class="fas fa-pencil-alt"></i></a>
+                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"
+                      data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?"
+                      data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
                   </td>
                 </tr>
               </tbody>
@@ -580,4 +627,113 @@
     </div>
   </div> --}}
 </section>
+
+
 @endsection
+@push('scripts')
+<script>
+    "use strict";
+
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    datasets: [{
+      label: 'Sales',
+      data: @json($values),
+      borderWidth: 2,
+      backgroundColor: 'rgba(63,82,227,.8)',
+      borderWidth: 0,
+      borderColor: 'transparent',
+      pointBorderWidth: 0,
+      pointRadius: 3.5,
+      pointBackgroundColor: 'transparent',
+      pointHoverBackgroundColor: 'rgba(63,82,227,.8)',
+    }
+    ]
+  },
+  options: {
+    legend: {
+      display: false
+    },
+    scales: {
+      yAxes: [{
+        gridLines: {
+          // display: false,
+          drawBorder: false,
+          color: '#f2f2f2',
+        },
+        ticks: {
+          beginAtZero: true,
+          stepSize: 150000,
+          callback: function(value, index, values) {
+            return '$' + value;
+          }
+        }
+      }],
+      xAxes: [{
+        gridLines: {
+          display: false,
+          tickMarkLength: 15,
+        }
+      }]
+    },
+  }
+}); 
+
+</script> 
+
+
+{{-- <script>
+
+"use strict";
+
+            var ctx = document.getElementById("myChart").getContext('2d');
+            var myChart = new Chart(ctx,{
+                type: 'line',
+                data: {
+                    labels: ["January", "February", "March", "April", "May", "June", "July", "August"],
+                    datasets: [{
+                        label: 'Sales',
+                        data: [329000, 987000, 987000, 2424000, 1974000, 1974000, 1974000, 1974000, 1974000, 1974000, 987000, 4539000],
+                        borderWidth: 2,
+                        backgroundColor: 'rgba(63,82,227,.8)',
+                        borderWidth: 0,
+                        borderColor: 'transparent',
+                        pointBorderWidth: 0,
+                        pointRadius: 3.5,
+                        pointBackgroundColor: 'transparent',
+                        pointHoverBackgroundColor: 'rgba(63,82,227,.8)',
+                    }]
+                },
+                options: {
+                    legend: {
+                        display: false
+                    },
+                    scales: {
+                        yAxes: [{
+                            gridLines: {
+                                // display: false,
+                                drawBorder: false,
+                                color: '#f2f2f2',
+                            },
+                            ticks: {
+                                beginAtZero: true,
+                                stepSize: 1500000,
+                                callback: function(value, index, values) {
+                                    return '$' + value;
+                                }
+                            }
+                        }],
+                        xAxes: [{
+                            gridLines: {
+                                display: false,
+                                tickMarkLength: 15,
+                            }
+                        }]
+                    },
+                }
+            });
+</script> --}}
+@endpush
