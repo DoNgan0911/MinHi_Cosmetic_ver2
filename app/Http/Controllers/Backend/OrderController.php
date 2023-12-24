@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\DataTables\OrderDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\messageCancelOrder;
 use Illuminate\Http\Request;
 use App\Models\Order;
 
@@ -39,9 +40,10 @@ class OrderController extends Controller
      */
     public function show(string $id)
     {
-        //
         $order = Order::findOrFail($id);
-        return view('admin.order.show', compact('order'));
+        $message = messageCancelOrder::where('idOrder','=', $id)->first();
+        
+        return view('admin.order.show', compact('order', 'message'));
     }
 
     /**
@@ -66,11 +68,21 @@ class OrderController extends Controller
     public function destroy(string $id)
     {
         //
+        $order = Order::findOrFail($id);
+        // dd($order);
+        $order->orderDetails()->delete();
+        $order->delete();
+        return response(['status'=>'success', 'message'=>'Xóa thành công']);
     }
     public function changeOrderStatus(Request $request){
+
         
         $order = Order::findOrFail($request->id);
         $order->status = $request->status;
+        if($request->status === 'Đã hủy')
+        {
+            $order->enable = 0;
+        }
         $order->save();
         return response(['status' => 'success', 'message'=>'Cập nhật trạng thái đơn hàng thành công']);
 

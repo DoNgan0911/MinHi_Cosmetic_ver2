@@ -24,11 +24,12 @@ class UserOrderDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', function($query){
-                $showBtn = "<a href='".route('manage_order.show', $query->id)."' class='btn btn-primary'>Show   </a>";
-                $deleteBtn = "<a href='".route('manage_order.destroy', $query->id)."' class='btn btn-danger ml-2 delete-item'>D</a>";
-                $statusBtn = "<a href='".route('manage_order.destroy', $query->id)."' class='btn btn-warning ml-2'>D</a>";
+                $showBtn = "<a href='".route('customer.orders.show', $query->id)."' class='btn btn-primary'>Xem chi tiết</a>";
+                // $deleteBtn = "<a href='".route('manage_order.destroy', $query->id)."' class='btn btn-danger ml-2 delete-item'>D</a>";
+                // $statusBtn = "<a href='".route('manage_order.destroy', $query->id)."' class='btn btn-warning ml-2'>D</a>";
 
-                return $showBtn.$deleteBtn.$statusBtn ; 
+                return $showBtn;
+                // .$deleteBtn.$statusBtn ; 
             })
             ->addColumn('customer', function($query){
                 return $query->user->name;
@@ -87,10 +88,10 @@ class UserOrderDataTable extends DataTable
             Column::make('address'),
             Column::make('phone'),
             Column::make('status'),
-            Column::make('enable'),
+            // Column::make('enable'),
             Column::make('total'),
             Column::make('payment_method'),
-            Column::make('user_id'),
+            // Column::make('user_id'),
             Column::computed('action')
             ->exportable(false)
             ->printable(false)

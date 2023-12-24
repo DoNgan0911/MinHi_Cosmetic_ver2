@@ -29,59 +29,59 @@ MinHi || Checkout
 <!--============================
         CHECK OUT PAGE START
     ==============================-->
-<section id="wsus__cart_view">
-    <div class="container">
-        <form class="wsus__checkout_form" method="POST" action="{{ route('customer.checkout.form-submit') }}">
-            @csrf
-            <div class="row">
-                <div class="col-xl-8 col-lg-7">
-                    <div class="wsus__check_form">
-                        <h5>chi tiết đơn hàng </h5>
-                        <div class="row">
-                            <div class="col-md-6 col-lg-12 col-xl-6">
-                                <div class="wsus__check_single_form">
-                                    <input id="ten" type="text" placeholder="Tên" value="{{ $user->name }}">
+    <section id="wsus__cart_view">
+        <div class="container">
+            <form class="wsus__checkout_form">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="wsus__check_form">
+                            <h5>chi tiết đơn hàng </h5>
+                            <div class="row">
+                                <div class="col-md-6 col-lg-12 col-xl-6">
+                                    <div class="wsus__check_single_form">
+                                        <input id="ten" type="text" placeholder="Tên" value="{{ $user->name }}">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 col-lg-12 col-xl-6">
-                                <div class="wsus__check_single_form">
-                                    <select class="select_2" name="state" id="province">
-                                        <option value="">Thành phố</option>
-                                    </select>
+                                <div class="col-md-6 col-lg-12 col-xl-6">
+                                    <div class="wsus__check_single_form">
+                                        <select class="select_2" name="state" id="province">
+                                            <option value="">Thành phố</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 col-lg-12 col-xl-6">
-                                <div class="wsus__check_single_form">
-                                    <select class="select_2" name="state" id="district">
-                                        <option value="">Tỉnh</option>
-                                    </select>
+                                <div class="col-md-6 col-lg-12 col-xl-6">
+                                    <div class="wsus__check_single_form">
+                                        <select class="select_2" name="state" id="district">
+                                            <option value="">Tỉnh</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 col-lg-12 col-xl-6">
-                                <div class="wsus__check_single_form">
-                                    <select class="select_2" name="state" id="ward">
-                                        <option value="">Phường</option>
-                                    </select>
+                                <div class="col-md-6 col-lg-12 col-xl-6">
+                                    <div class="wsus__check_single_form">
+                                        <select class="select_2" name="state" id="ward">
+                                            <option value="">Phường</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 col-lg-12 col-xl-6">
-                                <div class="wsus__check_single_form">
-                                    <input id="diachi" type="text" placeholder="Địa chỉ nhà">
+                                <div class="col-md-6 col-lg-12 col-xl-6">
+                                    <div class="wsus__check_single_form">
+                                        <input id="diachi" type="text" placeholder="Địa chỉ nhà">
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="col-md-6 col-lg-12 col-xl-6">
-                                <div class="wsus__check_single_form">
-                                    <input minlength="10" maxlength="10" id="sodienthoai" type="text"
-                                        placeholder="Số điện thoại người nhận hàng">
+                               
+                                <div class="col-md-6 col-lg-12 col-xl-6">
+                                    <div class="wsus__check_single_form">
+                                        <input minlength="10" maxlength="10" id="sodienthoai" type="number" placeholder="Số điện thoại người nhận hàng">
+                                    </div>
                                 </div>
-                            </div>
-
-
-                            <div class="col-md-12 col-lg-12 col-xl-12">
-                                <div class="wsus__check_single_form">
-                                    <h5>Ghi chú cho người bán</h5>
-                                    <textarea cols="3" rows="4" placeholder=""></textarea>
+                             
+                            
+                                <div class="col-md-12 col-lg-12 col-xl-12">
+                                    <div class="wsus__check_single_form">
+                                        <h5>Ghi chú cho người bán</h5>
+                                        <textarea cols="3" rows="4"
+                                            placeholder=""></textarea>
+                                    </div>
                                 </div>
                             </div>
                         </div>

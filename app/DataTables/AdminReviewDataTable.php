@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\Order;
+use App\Models\AdminReview;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -11,8 +11,9 @@ use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
+use App\Models\ProductReview;
 
-class OrderDataTable extends DataTable
+class AdminReviewDataTable extends DataTable
 {
     /**
      * Build the DataTable class.
@@ -22,32 +23,34 @@ class OrderDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', function($query){
-                $showBtn = "<a href='".route('manage_order.show', $query->id)."' class='btn btn-primary'>Chi tiết</a>";
-                // Xóa cho khách hàng không có tài khoản mà muốn hủy đơn hang
-                $deleteBtn = "<a href='".route('manage_order.destroy', $query->id)."' class='btn btn-danger ml-2 delete-item'>Xóa</a>";
-                // $statusBtn = "<a href='".route('manage_order.destroy', $query->id)."' class='btn btn-warning ml-2'>D</a>";
-
-                return $showBtn.$deleteBtn ; 
-            })
-            ->addColumn('customer', function($query){
-                return $query->user->name;
-            })
-            ->addColumn('date', function($query){
-                return date('d-M-Y', strtotime($query->created_at));
+            ->addColumn('product', function($query){
+                return "<a href='".route('product-detail', $query->product->name)."'>".$query->product->name. "</a>" ;
             })
             ->addColumn('status', function($query){
-                return "<span class='badge bg-warning'>$query->status </span>" ;
+                if($query->status == 1){
+                    $button = '<label class="custom-switch mt-2">
+                    <input type="checkbox" checked name="custom-switch-checkbox" data-id="'.$query->id.'"
+                    class ="custom-switch-input change-status">
+                    <span class="custom-switch-indicator"></span>
+                    </label>';
+                }
+                else{
+                    $button = '<label class="custom-switch mt-2">
+                    <input type="checkbox"  name="custom-switch-checkbox" data-id="'.$query->id.'"
+                    class ="custom-switch-input change-status">
+                    <span class="custom-switch-indicator"></span>
+                    </label>';
+                }
+                return $button;
             })
-            
-            ->rawColumns(['status', 'action'])
+            ->rawColumns(['product', 'status'])
             ->setRowId('id');
     }
 
     /**
      * Get the query source of dataTable.
      */
-    public function query(Order $model): QueryBuilder
+    public function query(ProductReview $model): QueryBuilder
     {
         return $model->newQuery();
     }
@@ -58,7 +61,7 @@ class OrderDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('order-table')
+                    ->setTableId('adminreview-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     //->dom('Bfrtip')
@@ -81,20 +84,10 @@ class OrderDataTable extends DataTable
     {
         return [
             Column::make('id'),
-            Column::make('name'),
-            Column::make('date'),
-            Column::make('address'),
-            Column::make('phone'),
-            Column::make('status'),
-            Column::make('enable'),
-            Column::make('total'),
-            Column::make('payment_method'),
-            Column::make('user_id'),
-            Column::computed('action')
-            ->exportable(false)
-            ->printable(false)
-            ->width(260)
-            ->addClass('text-center')
+            Column::make('product'),
+            Column::make('rating'),
+            Column::make('review'),
+            Column::make('status')
         ];
     }
 
@@ -103,6 +96,6 @@ class OrderDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'Order_' . date('YmdHis');
+        return 'AdminReview_' . date('YmdHis');
     }
 }

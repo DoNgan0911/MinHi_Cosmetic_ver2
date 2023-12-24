@@ -79,8 +79,8 @@
 
   <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 
-  <!-- Page Specific JS File -->
-  <script src="{{ asset('backend/assets/js/page/index-0.js') }}"></script>
+  <!-- Page Specific JS File cmt cho chart -->
+  {{-- <script src="{{ asset('backend/assets/js/page/index-0.js') }}"></script> --}}
   
   <!-- Template JS File -->
   <script src="{{ asset('backend/assets/js/scripts.js') }}"></script>
@@ -96,16 +96,19 @@
   {{-- Thêm dynamic delete alert, are you sure??? + lập trình ajax để xác minh delete --}}
   <script>
     $(document).ready(function(){
+      
       $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
       $('body').on('click', '.delete-item', function(event){
+        
         event.preventDefault();
         let deleteUrl = $(this).attr('href');
+        
         Swal.fire({
-          title: "Are you sure?",
+          title: "Bạn có muốn xóa?",
           icon: "warning",
           showCancelButton: true,
           confirmButtonColor: "#3085d6",

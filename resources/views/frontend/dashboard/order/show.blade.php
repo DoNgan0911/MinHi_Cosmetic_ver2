@@ -1,18 +1,11 @@
-@extends('admin.layouts.master')
+@extends('frontend.dashboard.layouts.master')
 @section('content')
     <section class="section">
-      <div class="section-header">
-        <div class="section-header-breadcrumb">
-          <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-          <div class="breadcrumb-item"><a href="#">Components</a></div>
-          <div class="breadcrumb-item">Table</div>
-        </div>
-      </div>
-
+        @extends('frontend.dashboard.layouts.sidebar')
       <div class="section-body">
         <div class="row">
           <div class="col-12 ">
-            <div class="card">
+            <div class="card" style="width:90%; margin-left: 250px">
               <div class="card-header">
                 <h4>Chi tiết đơn hàng</h4>
                 
@@ -24,7 +17,6 @@
                     <div class="row">
                       <div class="col-lg-12">
                         <div class="invoice-title">
-                          <h2>Hóa đơn</h2>
                           <div class="invoice-number">Order #{{ $order->id }}</div>
                         </div>
                         <hr>
@@ -60,6 +52,12 @@
                               {{ $order->date }}<br><br>
                             </address>
                           </div>
+                          <div class="col-md-6 text-md-right">
+                            <address>
+                              <strong>Trạng thái đơn hàng:</strong><br>
+                              {{ $order->status }}<br><br>
+                            </address>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -74,13 +72,14 @@
                               <th class="text-center">Giá</th>
                               <th class="text-center">Số lượng mua</th>
                               <th class="text-right">Tổng</th>
+
                             </tr>
                             @foreach ($order->orderDetails as $detail)
                             <tr>
                               <td>{{ $detail->product->name }}</td>
-                              <td class="text-center">{{ $detail->price  }}</td>
+                              <td class="text-center">{{ $detail->product->price  }}</td>
                               <td class="text-center">{{$detail->quantity }}</td>
-                              <td class="text-right">{{ $detail->price * $detail->quantity  }}</td>
+                              <td class="text-right">{{ $detail->product->price * $detail->quantity  }}</td>
                             </tr>  
                             @endforeach
                         
@@ -89,42 +88,16 @@
                         <div class="row mt-4">
                           <div class="col-lg-8">
                             <div class="col-md-4">
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label for="">Trạng thái đơn hàng</label>
-                                    {{-- <select name="order_status" class="form-control" id="order_status" data-id="{{ $order->id }}" >
-                                      @if($order->status !== 'Đã hủy' )
+                                    <select name="order_status" class="form-control" id="order_status" data-id="{{ $order->id }}" >
                                         @foreach (config('order_status.oder_status_admin') as $key => $orderStatus)
-                                          @if(!$message)
-                                              <option {{ $order->status === $key ? 'selected' :'' }} value="{{ $key }}">{{ $orderStatus['status'] }}</option>      
-                                          @endforeach
-                                     
-                                      @endif
-                                    </select> --}}
-                                    <select name="order_status" class="form-control" id="order_status" data-id="{{ $order->id }}">
-                                      @if ($order->status !== 'Đã hủy')
-                                        @foreach (config('order_status.oder_status_admin') as $key => $orderStatus)
-                                            @if ($message)
-                                                <!-- Display all six statuses if $message doesn't exist -->
-                                                <option {{ $order->status === $key ? 'selected' : '' }} value="{{ $key }}">{{ $orderStatus['status'] }}</option>
-                                            @else
-                                                <!-- Display only the first four statuses if $message exists -->
-                                                @if (in_array($key, ['Đã đặt hàng', 'Đang chuẩn bị', 'Đang giao hàng', 'Thành công']))
-                                                    <option {{ $order->status === $key ? 'selected' : '' }} value="{{ $key }}">{{ $orderStatus['status'] }}</option>
-                                                @endif
-                                            @endif
+                                            <option {{ $order->order_status === $key ? 'selected' :'' }} value="{{ $key }}">{{ $orderStatus['status'] }}</option>
+                                            
                                         @endforeach
-                                        
-                                      @endif
-                                  </select>
-                                  
-                                </div>
+                                    </select>
+                                </div> --}}
                             </div>
-
-                            @if($order->status === 'Đợi xác nhận hủy' || $order->status === 'Đã hủy')
-                              <div>
-                                <p>Lí do khách hàng hủy: <span>{{ $message->description }}</span> </p>
-                              </div>
-                            @endif
                           </div>
                           <div class="col-lg-4 text-right">
                             <div class="invoice-detail-item">
@@ -139,8 +112,14 @@
 
                   <hr>
                   <div class="text-md-right">
-                   
-                    <button class="btn btn-warning btn-icon icon-left print_invoice"><i class="fas fa-print"></i>In hóa đơn</button>
+                    @if ($order->status === 'Đã đặt hàng' || $order->status === 'Đang chuẩn bị')
+                     <form action="{{ route('customer.cancel-order.cancel') }}" style="margin-top: 100px" method="POST">
+                      @csrf
+                      <input type="text" name="idorder" id="" value="{{ $order->id }}" hidden>
+                      <div><textarea name="description" type="text" style="width:300px; height:50px; margin-bottom:20px" placeholder="Tại sao bạn muốn hủy đơn?"></textarea></div>
+                        <button class="btn btn-warning btn-icon icon-left">Hủy đơn hàng</button>
+                     </form>
+                    @endif
                   </div>
                 </div>
               </div>
@@ -153,41 +132,3 @@
     </section>
 
 @endsection
-{{-- đẩy" nội dung vào một "stack" có tên là 'scripts' bên trang master --}}
-@push('scripts')
-    <script>
-        $(document).ready(function(){
-            // $.ajaxSetup({
-            //     headers: {
-            //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            //     }
-            // });
-            $('#order_status').on('change', function(){
-                let status = $(this).val();
-                let id = $(this).data('id');
-                $.ajax({
-                    method: 'GET',
-                    url: "{{ route('admin.order.status') }}",
-                    data:{status: status, id:id},
-                    success: function(data){
-                        if(data.status === 'success'){
-                            toastr.success(data.message);
-                        }
-                    },
-                    error: function(data){
-                        console.log(data);
-                    }
-                })
-            })
-            $('.print_invoice').on('click', function(){
-                let printBody = $('.invoice-print');
-                let originalContents = $('body').html();
-                $('body').html(printBody.html());
-                window.print();
-                $('body').html(originalContents);
-                
-            })
-        })
-    </script>
-@endpush
-
