@@ -1,14 +1,17 @@
 @extends('frontend.dashboard.layouts.master')
+@section('title')
+MinHi_Cosmetic || Đánh giá
+@endsection
 @section('content')
     <section class="section">
-      {{-- <div class="section-header">
+      <div class="section-header">
         <h1>Table</h1>
         <div class="section-header-breadcrumb">
           <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
           <div class="breadcrumb-item"><a href="#">Components</a></div>
           <div class="breadcrumb-item">Table</div>
         </div>
-      </div> --}}
+      </div>
 
       @extends('frontend.dashboard.layouts.sidebar')
       <div class="section-body">
@@ -17,7 +20,7 @@
               <div class="col-12 ">
             <div class="card">
               <div class="card-header">
-                <h4>Các đơn hàng</h4>
+                <h4>Đánh giá của bạn</h4>
                 
               </div>
               <div class="card-body" style="width:80%; margin-left: 280px">

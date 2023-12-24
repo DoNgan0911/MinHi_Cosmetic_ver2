@@ -71,7 +71,7 @@ MinHi || Checkout
                                
                                 <div class="col-md-6 col-lg-12 col-xl-6">
                                     <div class="wsus__check_single_form">
-                                        <input minlength="10" maxlength="10" id="sodienthoai" type="text" placeholder="Số điện thoại người nhận hàng">
+                                        <input minlength="10" maxlength="10" id="sodienthoai" type="number" placeholder="Số điện thoại người nhận hàng">
                                     </div>
                                 </div>
                              

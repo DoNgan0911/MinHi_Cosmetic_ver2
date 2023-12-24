@@ -106,10 +106,12 @@
                         </li>
 
                       
+                        <li><a href="{{ route('product-tracking.index') }}">Tra cứu đơn hàng</a></li>
                         
                     </ul>
                     <ul class="wsus__menu_item wsus__menu_item_right">
                         {{-- <li><a href="contact.html">contact</a></li> --}}
+
                         <li><a {{ Auth::check() ? 'href=' . route('customer.profile') : 'hidden' }}>Tài khoản</a></li>
                         <li>    <a {{ !Auth::check() ? 'href=' . route('login') : 'hidden' }}>Login</a> </li>                        </li>
                     </ul>
@@ -262,7 +264,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a href="track_order.html">track order</a></li>
+                        <li><a href="{{ route('product-tracking.index') }}">track order</a></li>
                         <li><a href="daily_deals.html">daily deals</a></li>
                     </ul>
                 </div>

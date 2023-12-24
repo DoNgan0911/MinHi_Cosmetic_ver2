@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\Backend\AdminReviewController;
 use App\Http\Controllers\Backend\CustomerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AdminController;
@@ -19,33 +20,31 @@ use Illuminate\Http\RedirectResponse;
 Route::get('admin/dashboard', [AdminController::class,'dashboard'])->middleware(['auth', 'role:admin'])->name('admin.dashboard');
     
 // admin logout
-Route::post('logout', function(Request $request): RedirectResponse{
-    Auth::guard('web')->logout();
-    $request->session()->invalidate();
-    $request->session()->regenerateToken();
-    return redirect('/admin/login');
-})->name('logout');
+// Route::post('logout', function(Request $request): RedirectResponse{
+//     Auth::guard('web')->logout();
+//     $request->session()->invalidate();
+//     $request->session()->regenerateToken();
+//     return redirect('/admin/login');
+// })->name('logout');
 
 
 Route::get('admin/profile', [ProfileController::class, 'index'])->name('admin.profile');
 Route::post('admin/profile/update', [ProfileController::class, 'updateProfile'])->name('admin.profile.update'); 
 
-// Slider Route- ko cần nữa
-// Route::resource('admin/slider', SliderController::class);
-
+ 
 
 // MANAGE PRODUCTS
 Route::resource('admin/manage_product', ProductController::class);
 
-// Manage Order
+// Quản lý đơn hàng
 Route::resource('admin/manage_order', OrderController::class);
 Route::get('admin/order-status', [OrderController::class, 'changeOrderStatus'])->name('admin.order.status');
 
 // Quản lý khách hàng
 Route::resource('admin/manage_customer',  CustomerController::class);
-
-
-
+//quản lý feedback
+Route::get('admin/reviews', [AdminReviewController::class, 'index'])->name('admin.review.index');
+Route::put('admin/reviews/change-status', [AdminReviewController::class, 'changeStatus'])->name('admin.review.change-status');
 
 
 

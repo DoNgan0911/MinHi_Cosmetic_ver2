@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product_reviews', function (Blueprint $table) {
+        Schema::create('message_cancel_orders', function (Blueprint $table) {
             $table->id();
-            $table->integer('product_id');
-            $table->integer('user_id');
-            $table->string('review');
-            $table->string('rating');
-            // $table->status('status');
+            $table->string('description');
+            $table->date('date');
+            $table->boolean('enable')->default(0);
+            $table->integer('idOrder');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('product_reviews');
+        Schema::dropIfExists('message_cancel_orders');
     }
 };
