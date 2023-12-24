@@ -21,7 +21,7 @@ return new class extends Migration
             $table->boolean('enable');
             $table->double('total');
             $table->string('payment_method');
-            $table->integer('user_id');
+            $table->string('idCustomer');
             $table->timestamps();
         });
     }

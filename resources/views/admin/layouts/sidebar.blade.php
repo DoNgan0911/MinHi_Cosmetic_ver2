@@ -36,6 +36,12 @@
             <li><a class="nav-link" href="{{route('manage_customer.index') }}">Khách hàng</a></li>
           </ul>
         </li>
+        <li class="dropdown">
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Quản lý đánh giá</span></a>
+          <ul class="dropdown-menu">
+            <li><a class="nav-link" href="{{route('admin.review.index') }}">Đánh giá sản phẩm</a></li>
+          </ul>
+        </li>
         {{-- <li class="dropdown">
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
           <ul class="dropdown-menu">

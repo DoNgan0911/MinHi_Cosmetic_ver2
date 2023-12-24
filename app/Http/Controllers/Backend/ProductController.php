@@ -109,7 +109,6 @@ class ProductController extends Controller
         $product->save();
         
         toastr('Update Successfully', 'success');
-
         return redirect()->route('manage_product.index');
     }
 

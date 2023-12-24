@@ -113,7 +113,11 @@ class CheckOutController extends Controller
     }
     
     public function storeOrder(Request $request)
-    {
+    { 
+      
+
+        
+
         $order = new Order();
         $order->name = $request->ten;
         $order->date = Carbon::now();
@@ -130,6 +134,7 @@ class CheckOutController extends Controller
             $orderdetail->order_id = $order->id;
             $orderdetail->product_id = $product->id;
             $orderdetail->quantity = $item->qty;
+            $orderdetail->price = $product->price;
             $orderdetail->save();
         }       
     }
