@@ -3,7 +3,7 @@
       <i class="far fa-bars dash_bar"></i>
       <i class="far fa-times dash_close"></i>
     </span>
-    <a href="{{route('manage_order.index') }}" class="dash_logo"><h1 class="img-fluid w-100" style="color:aliceblue" >MinHi</h1>
+    <a href="{{route('home') }}" class="dash_logo"><h1 class="img-fluid w-100" style="color:aliceblue" >MinHi</h1>
     </a>
     <ul class="dashboard_link">
       {{-- <li><a class="active" href="dsahboard.html"><i class="fas fa-tachometer"></i>Dashboard</a></li> --}}

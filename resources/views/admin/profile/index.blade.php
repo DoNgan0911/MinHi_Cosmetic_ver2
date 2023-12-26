@@ -83,13 +83,13 @@
                   <div class="row">                               
                     <div class="form-group col-md-6 col-12">
                       <label>PostCode</label>
-                      <input type="text" class="form-control" value="064303002139" required="">
+                      <input type="text" name="postcode" class="form-control" value="{{ Auth::user()->postcode }}" >
                     </div>
                   </div>
                   <div class="row">                               
                     <div class="form-group col-md-6 col-12">
                       <label>Birthday</label>
-                      <input type="text" class="form-control" value="2003-11-09" required="">
+                      <input type="text" name="birthday" class="form-control" value="{{ Auth::user()->birthday }}" required="">
                     </div>
                   </div>
                   <div class="row">                               

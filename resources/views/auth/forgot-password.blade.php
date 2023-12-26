@@ -10,10 +10,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h4>forget password</h4>
+                        <h4>Quên mật khẩu</h4>
                         <ul>
-                            <li><a href="#">login</a></li>
-                            <li><a href="#">forget password</a></li>
+                            <li><a href="#">Đăng nhập</a></li>
+                            <li><a href="#">Quên mật khẩu</a></li>
                         </ul>
                     </div>
                 </div>
@@ -35,18 +35,18 @@
                     <div class="wsus__forget_area">
                         <span class="qiestion_icon"><i class="fal fa-question-circle"></i></span>
                         <h4>forget password ?</h4>
-                        <p>enter the email address to register with <span>e-shop</span></p>
+                        <p>Vui lòng điền email để lấy lại mật khẩu <span></span></p>
                         <div class="wsus__login">
-                            <form method="POST" action="{{ route('password.confirm') }}">
+                            <form method="POST" action="{{ route('password.email') }}">
                                 @csrf
                                 <div class="wsus__login_input">
                                     <i class="fal fa-envelope"></i>
                                     <input id="email" name="email"  type="email" value="{{ old('email') }}" placeholder="Your Email">
                                 </div>
-                                <button class="common_btn" type="submit">send</button>
+                                <button class="common_btn" type="submit">Gửi</button>
                             </form>
                         </div>
-                        <a class="see_btn mt-4" href="login.html">go to login</a>
+                        <a class="see_btn mt-4" href="login.html">quay lại đăng nhập</a>
                     </div>
                 </div>
             </div>

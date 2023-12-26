@@ -67,11 +67,11 @@
                     </div>
                     <div class="form-group">
                         <label for="">Quantity</label>
-                        <input type="text" class="form-control" name="quantity" value="">
+                        <input type="number" class="form-control" name="quantity" value="">
                     </div>
                     <div class="form-group">
                         <label for="">Price</label>
-                        <input type="text" class="form-control" name="price" value="">
+                        <input type="number" class="form-control" name="price" value="">
                     </div>
                     <button type="submit" class="btn btn-primary">Add</button>
                 </form>

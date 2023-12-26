@@ -120,10 +120,13 @@
                                 </div>
                             </div>
 
-                            @if($order->status === 'Đợi xác nhận hủy' || $order->status === 'Đã hủy')
+                            @if($exist)
+                              @if ($order->status === 'Đợi xác nhận hủy' || $order->status === 'Đã hủy' )
                               <div>
                                 <p>Lí do khách hàng hủy: <span>{{ $message->description }}</span> </p>
                               </div>
+                                
+                              @endif
                             @endif
                           </div>
                           <div class="col-lg-4 text-right">

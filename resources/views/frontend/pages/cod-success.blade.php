@@ -3,5 +3,5 @@
 MinHi || Thành công
 @endsection
 @section('content')
-<h3 style="text-align: center">Đặt hàng thành công</h3>
+<h5 style="text-align: center; margin-top:30px">{{ $message }}</h5>
 @endsection

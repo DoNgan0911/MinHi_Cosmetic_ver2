@@ -111,8 +111,9 @@ MinHi || Cart Details
                 <div class="wsus__cart_list_footer_button" id="sticky_sidebar">
                     <h6>Tổng tiền</h6>
                     <p>Tổng tiền: <span class="cart_subtotal">{{ $total }}</span>vnđ</p>
-                    <a class="common_btn mt-4 w-100 text-center" href="{{ route('customer.checkout') }}">Thanh toán</a>
-                    
+                    @if (count($cartItems) !== 0)
+                    <a class="common_btn mt-4 w-100 text-center" href="{{ route('customer.checkout') }}">Thanh toán</a>  
+                    @endif
                 </div>
             </div>
         </div>

@@ -47,74 +47,73 @@
 
                     <ul class="wsus__menu_item">
                         <li><a class="active" href="{{ url('/') }}">home</a></li>
-
-                        <li><a href="product_grid_view.html">shop <i class="fas fa-caret-down"></i></a>
-                            <div class="wsus__mega_menu">
-                                <div class="row">
-                                    <div class="col-xl-3 col-lg-3" style="width:20%">
-                                        <div class="wsus__mega_menu_colum">
-                                            <h4>Nước tẩy trang</h4>
-                                            <ul class="wsis__mega_menu_item">
-                                                @foreach ($productsNTT as $product)
-                                                <li><a href="#">{{ $product->name }}</a></li>
-                                                @endforeach
-                                            </ul>
+                            <li>
+                                <a href="#">shop <i class="fas fa-caret-down"></i></a>
+                                <div class="wsus__mega_menu">
+                                    <div class="row">
+                                        <div class="col-xl-3 col-lg-3" style="width:20%">
+                                            <div class="wsus__mega_menu_colum">
+                                                <h4>Nước tẩy trang</h4>
+                                                <ul class="wsis__mega_menu_item">
+                                                    @foreach ($productsNTT as $product)
+                                                    <li><a href="{{ route('product-detail',$product->name) }}">{{ $product->name }}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-3" style="width:20%">
-                                        <div class="wsus__mega_menu_colum">
-                                            <h4>Sữa rửa mặt</h4>
-                                            <ul class="wsis__mega_menu_item">
-                                                @foreach ($productsSRM as $product)
-                                                <li><a href="{{ route('product-detail',$product->name) }}">{{ $product->name }}</a></li>
-                                                @endforeach
-                                            </ul>
+                                        <div class="col-xl-3 col-lg-3" style="width:20%">
+                                            <div class="wsus__mega_menu_colum">
+                                                <h4>Sữa rửa mặt</h4>
+                                                <ul class="wsis__mega_menu_item">
+                                                    @foreach ($productsSRM as $product)
+                                                    <li><a href="{{ route('product-detail',$product->name) }}">{{ $product->name }}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-3" style="width:20%">
-                                        <div class="wsus__mega_menu_colum">
-                                            <h4>Kem chống nắng</h4>
-                                            <ul class="wsis__mega_menu_item">
-                                                @foreach ($productsKCN as $product)
-                                                <li><a href="{{ route('product-detail',$product->name) }}">{{ $product->name }}</a></li>
-                                                @endforeach
-                                            </ul>
+                                        <div class="col-xl-3 col-lg-3" style="width:20%">
+                                            <div class="wsus__mega_menu_colum">
+                                                <h4>Kem chống nắng</h4>
+                                                <ul class="wsis__mega_menu_item">
+                                                    @foreach ($productsKCN as $product)
+                                                    <li><a href="{{ route('product-detail',$product->name) }}">{{ $product->name }}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-3" style="width:20%">
-                                        <div class="wsus__mega_menu_colum">
-                                            <h4>Serum</h4>
-                                            <ul class="wsis__mega_menu_item">
-                                                @foreach ($productsSR as $product)
-                                                <li><a href="#">{{ $product->name }}</a></li>
-                                                @endforeach
-                                            </ul>
+                                        <div class="col-xl-3 col-lg-3" style="width:20%">
+                                            <div class="wsus__mega_menu_colum">
+                                                <h4>Serum</h4>
+                                                <ul class="wsis__mega_menu_item">
+                                                    @foreach ($productsSR as $product)
+                                                    <li><a href="{{ route('product-detail',$product->name) }}">{{ $product->name }}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-3" style="width:20%">
-                                        <div class="wsus__mega_menu_colum">
-                                            <h4>Kem dưỡng ẩm</h4>
-                                            <ul class="wsis__mega_menu_item">
-                                                @foreach ($productsSR as $product)
-                                                <li><a href="#">{{ $product->name }}</a></li>
-                                                @endforeach
-                                            </ul>
+                                        <div class="col-xl-3 col-lg-3" style="width:20%">
+                                            <div class="wsus__mega_menu_colum">
+                                                <h4>Kem dưỡng ẩm</h4>
+                                                <ul class="wsis__mega_menu_item">
+                                                    @foreach ($productsKDA as $product)
+                                                    <li><a href="{{ route('product-detail',$product->name) }}">{{ $product->name }}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-
-                      
+                            </li>
                         <li><a href="{{ route('product-tracking.index') }}">Tra cứu đơn hàng</a></li>
-                        
                     </ul>
-                    <ul class="wsus__menu_item wsus__menu_item_right">
-                        {{-- <li><a href="contact.html">contact</a></li> --}}
+                
+                <ul class="wsus__menu_item wsus__menu_item_right">
+                    {{-- <li><a href="contact.html">contact</a></li> --}}
 
-                        <li><a {{ Auth::check() ? 'href=' . route('customer.profile') : 'hidden' }}>Tài khoản</a></li>
-                        <li>    <a {{ !Auth::check() ? 'href=' . route('login') : 'hidden' }}>Login</a> </li>                        </li>
-                    </ul>
+                    <li><a {{ Auth::check() && Auth::user()->role == 'customer' ? 'href=' . route('customer.profile') : 'hidden' }}>Tài khoản</a></li>
+                    <li>    <a {{ !Auth::check() ? 'href=' . route('login') : 'hidden' }}>Login</a> </li>                        </li>
+                </ul>
+                    
                 </div>
             </div>
         </div>

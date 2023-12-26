@@ -13,18 +13,35 @@ use App\Models\Product;
 use App\Models\OrderDetail;
 use Carbon\Carbon;
 
+
 class CheckOutController extends Controller
 {
     //
     public function index(){
-        $userId = Auth::user()->id;
-        $user = User::find($userId); 
-        $cartItems = Cart::content();
-        $total = 0;
-        foreach($cartItems as $item){
-            $total += $item->price*$item->qty;
+        // dd(Cart::weight());
+        if (!Cart::count()){
+            return redirect(route('home'));
         }
-        return view('frontend.pages.checkout', compact('user', 'total'));
+        if(Auth::user())
+        {
+            $userId = Auth::user()->id;
+            $user = User::find($userId); 
+            $cartItems = Cart::content();
+            $total = 0;
+            foreach($cartItems as $item){
+                $total += $item->price*$item->qty;
+            }
+            return view('frontend.pages.checkout', compact('user', 'total'));
+        }
+        else{
+            $cartItems = Cart::content();
+            $total = 0;
+            foreach($cartItems as $item){
+                $total += $item->price*$item->qty;
+            }
+            return view('frontend.pages.checkout', compact('total'));
+
+        }
     }
 
     public function execPostRequest($url, $data)
@@ -50,11 +67,29 @@ class CheckOutController extends Controller
         return $result;
     }
     public function checkOutFormSubmit( Request $request ){
+        $check = true;
         if($request->paymentMethod === 'COD' ){
-            $this->storeOrder($request);
+            $orderId = 0;
+            $this->storeOrder($request,$orderId,$check);
             $this->clearSession();
-            return response(['status' => 'success', 'redirect_url'=> route('customer.cod.success')]);
+            // if($check){
+                return response(['status' => 'success', 'redirect_url'=> route('customer.success', compact('orderId'))]);
+            // } else {
+            //     $message = "Có lỗi xảy ra về số lượng sản phẩm";
+                // return response(['status' => 'error', 'redirect_url'=> route('customer.checkout', compact('message'))]);
+            // }
         }else{
+            $orderIdFind = 0;
+            $this->storeOrderMOMO($request,$orderIdFind,$check);
+            $this->clearSession();
+            // if ($check){
+            //     $message = "Có lỗi xảy ra về số lượng sản phẩm";
+            //     return response(['status' => 'error', 'redirect_url'=> route('customer.checkout', compact('message'))]);
+            // }
+            $order = Order::findOrFail($orderIdFind)->first();
+            $order->status = "Đang thanh toán"; 
+            // dd($request->all());
+            // dd(isset($_POST['payUrl']));
             if (isset($_POST['payUrl'])) {
                 $endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
     
@@ -65,13 +100,14 @@ class CheckOutController extends Controller
     
     
                 $orderInfo = "Thanh toán qua MoMo";
-                // $amount = $request->input('total');
-                $amount = "100000";
+                $amount = $request->total;
+                // $amount = "100000";
+                // $orderId = (string)$orderIdFind . "";
                 $orderId = time() . "";
-                $redirectUrl = "http://minhi_cosmetic_ver2.test/customer/success/";
-                $ipnUrl = "http://minhi_cosmetic_ver2.test/customer/success/";
+                $redirectUrl = "http://official.test/customer/success/";
+                $ipnUrl = "http://official.test/customer/success/"; 
                 // $extraData = $request->input('address');
-                $extraData = "";
+                $extraData = $orderIdFind ."";
                     $partnerCode = $partnerCode;
                     $accessKey = $accessKey;
                     $serectkey = $secretKey;
@@ -101,6 +137,7 @@ class CheckOutController extends Controller
             'extraData' => $extraData,
             'requestType' => $requestType,
             'signature' => $signature);
+            // dd($data);
         $result =$this->execPostRequest($endpoint, json_encode($data));
         $jsonResult = json_decode($result, true);  // decode json
     
@@ -112,12 +149,9 @@ class CheckOutController extends Controller
         }
     }
     
-    public function storeOrder(Request $request)
+    public function storeOrder(Request $request, &$orderId, &$check)
     { 
       
-
-        
-
         $order = new Order();
         $order->name = $request->ten;
         $order->date = Carbon::now();
@@ -126,16 +160,75 @@ class CheckOutController extends Controller
         $order->status = 'Đã đặt hàng';
         $order->total = $request->total;
         $order->payment_method= $request->paymentMethod;
-        $order->user_id= Auth::user()->id;
+        if(Auth::user()){
+            $order->user_id= Auth::user()->id;
+            $user_id =       Auth::user()->id;
+            $user = User::findOrFail($user_id);
+            $user->total = $user->total + $request->total;
+            $user->save();
+        }
+        else{
+            $order->user_id= null;
+        }
         $order->save();
+
+        $orderId = $order->id;
+
         foreach(Cart::content() as $item){ 
             $product = Product::find($item->id);
             $orderdetail = new OrderDetail();
             $orderdetail->order_id = $order->id;
             $orderdetail->product_id = $product->id;
+            $product->quantity= $product->quantity - $item->qty;
             $orderdetail->quantity = $item->qty;
             $orderdetail->price = $product->price;
+            if ($product->quantity<0){
+                $check = false;
+            } else{
+                $product->save();
+                $orderdetail->save();    
+            }
             $orderdetail->save();
+        }       
+    }
+    public function storeOrderMOMO(Request $request, &$orderId, &$check)
+    { 
+        
+
+        $order = new Order();
+        $order->name = $request->ten;
+        $order->date = Carbon::now();
+        $order->address = $request->diachi;
+        $order->phone = $request->sdt;
+        $order->status = 'Đã đặt hàng';
+        $order->total = $request->total;
+        $order->payment_method= $request->exampleRadios;
+        $order->payment_status = 'Đang Thanh Toán';
+        $order->enable = false;
+        if(Auth::user()){
+            $order->user_id= Auth::user()->id;
+        }
+        else{
+            $order->user_id= null;
+        }
+        $order->save();
+
+        $orderId = $order->id;
+
+        foreach(Cart::content() as $item){ 
+            $product = Product::find($item->id);
+            $orderdetail = new OrderDetail();
+            $orderdetail->order_id = $order->id;
+            $orderdetail->product_id = $product->id;
+            $product->quantity= $product->quantity - $item->qty;
+            $orderdetail->quantity = $item->qty;
+            $orderdetail->price = $product->price;
+            if ($product->quantity<0){
+                $check= false;
+            } else{
+                $product->save();
+                $orderdetail->save();    
+            }
         }       
     }
     public function clearSession(){

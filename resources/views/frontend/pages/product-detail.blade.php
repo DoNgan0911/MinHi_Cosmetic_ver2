@@ -18,7 +18,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h4>products details</h4>
+                        <h4>Chi tiết sản phẩm</h4>
                        
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                         <div class="wsus__pro_details_text">
                             <a class="title" href="#">{{ $product->type }} {{ $product->name }}</a>
                             <p class="wsus__stock_area"><span class="in_stock">Có sẵn</span> {{$product->quantity}} sản ph</p>
-                            <h4>{{ $product->price }} đ<del>đ60.00</del></h4>
+                            <h4>{{ $product->price }} đ<del>đ637.900</del></h4>
                             <p class="review">
                                 <span>20 review</span>
                             </p>
@@ -103,7 +103,7 @@
                     </div>
                     <div class="col-xl-3 col-md-12 mt-md-5 mt-lg-0">
                         <div class="wsus_pro_det_sidebar" id="sticky_sidebar">
-                            <ul>
+                            {{-- <ul>
                                 <li>
                                     <span><i class="fal fa-truck"></i></span>
                                     <div class="text">
@@ -125,7 +125,7 @@
                                         <!-- <p>Lorem Ipsum is simply dummy text of the printing</p> -->
                                     </div>
                                 </li>
-                            </ul>
+                            </ul> --}}
                             {{-- <div class="wsus__det_sidebar_banner">
                                 <img src="images/blog_1.jpg" alt="banner" class="img-fluid w-100">
                                 <div class="wsus__det_sidebar_banner_text_overlay">
@@ -205,7 +205,7 @@
                                             <div class="row">
                                                 <div class="col-xl-8 col-lg-7">
                                                     <div class="wsus__comment_area">
-                                                        <h4>Reviews <span>{{ count($reviews) }} đánh giá</span></h4>
+                                                        <h4>Đánh giá <span>{{ count($reviews) }} đánh giá</span></h4>
                                                         @foreach ($reviews as $review )
                                                             <div class="wsus__main_comment">
                                                                 <div class="wsus__comment_text reply">

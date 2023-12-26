@@ -23,15 +23,30 @@ class OrderDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', function($query){
-                $showBtn = "<a href='".route('manage_order.show', $query->id)."' class='btn btn-primary'>Chi tiết</a>";
-                // Xóa cho khách hàng không có tài khoản mà muốn hủy đơn hang
-                $deleteBtn = "<a href='".route('manage_order.destroy', $query->id)."' class='btn btn-danger ml-2 delete-item'>Xóa</a>";
-                // $statusBtn = "<a href='".route('manage_order.destroy', $query->id)."' class='btn btn-warning ml-2'>D</a>";
+                
+                // if($query->user_id){
+                //     $showBtn = "<a href='".route('manage_order.show', $query->id)."' class='btn btn-primary'>Chi tiết</a>";
+                //     return $showBtn;
+                // }
+                // else{
+                    $showBtn = "<a href='".route('manage_order.show', $query->id)."' class='btn btn-primary'>Chi tiết</a>";
+                    // Xóa cho khách hàng không có tài khoản mà muốn hủy đơn hang
+                    if($query->enable === 0 || $query->user_id == null ){
+                        $deleteBtn = "<a href='".route('manage_order.destroy', $query->id)."' class='btn btn-danger ml-2 delete-item'>Xóa</a>";
+                        return $showBtn.$deleteBtn ; 
 
-                return $showBtn.$deleteBtn ; 
+                    }
+                    return $showBtn;
+                // }
+
             })
             ->addColumn('customer', function($query){
-                return $query->user->name;
+                if($query->user_id !== null)
+                {
+                    return $query->user->name;
+                }else{
+                    return '';
+                }
             })
             ->addColumn('date', function($query){
                 return date('d-M-Y', strtotime($query->created_at));
@@ -89,6 +104,7 @@ class OrderDataTable extends DataTable
             Column::make('enable'),
             Column::make('total'),
             Column::make('payment_method'),
+            Column::make('payment_status'),
             Column::make('user_id'),
             Column::computed('action')
             ->exportable(false)

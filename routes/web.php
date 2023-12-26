@@ -15,7 +15,6 @@ use App\Http\Controllers\Frontend\UserProfileController;
 use App\Http\Controllers\Frontend\PaymentController;
 use App\Http\Controllers\Frontend\ReviewController;
 use App\Models\User;
-
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 /*
@@ -40,12 +39,11 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 // Route::get('admin/dashboard', [AdminController::class,'dashboard'])->middleware(['auth', 'role:admin'])->name('admin.dashboard');
+// Route::get('customer/dashboard', [CustomerController::class,'dashboard'])->name('customer.dashboard');
 
 
 // Trang home cua khach hang
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
-// Route::get('customer/dashboard', [CustomerController::class,'dashboard'])->name('customer.dashboard');
 
 // Sau khi khách hàng đăng nhập
 Route::group(['middleware' => ['auth', 'verified']], function(){ 
@@ -58,22 +56,17 @@ Route::group(['middleware' => ['auth', 'verified']], function(){
     Route::get('customer/orders', [UserOrderController::class, 'index'])->name('customer.orders.index');
     Route::get('customer/orders/{id}', [UserOrderController::class, 'show'])->name('customer.orders.show');
     Route::post('customer/cancel-order', [UserOrderController::class, 'cancel'])->name('customer.cancel-order.cancel');
-
-
-
 // bấm vào thanh toán: 
-    Route::get('customer/checkout', [CheckOutController::class, 'index'])->name('customer.checkout');
-    Route::post('customer/checkout/form-submit', [CheckOutController::class, 'checkOutFormSubmit'])->name('customer.checkout.form-submit');
-    Route::get('customer/cod/success', [PaymentController::class, 'codSuccess'])->name('customer.cod.success');
-
-    
 // route cho feedback khách hàng
 Route::post('customer/review', [ReviewController::class, 'create'])->name('customer.review.create'); 
 Route::get('customer/reviews', [ReviewController::class, 'index'])->name('customer.review.index'); 
 
-
-
 });
+Route::get('customer/checkout', [CheckOutController::class, 'index'])->name('customer.checkout');
+Route::post('customer/checkout/form-submit', [CheckOutController::class, 'checkOutFormSubmit'])->name('customer.checkout.form-submit');
+// Route::get('customer/success', [PaymentController::class, 'codSuccess'])->name('customer.success');
+Route::get('customer/success', [PaymentController::class, 'codSuccess'])->name('customer.success');
+
 
 // admin đăng nhập tại route
 // Route::get('admin/login', [AdminController::class , 'login'])->name('admin.login');
@@ -89,6 +82,17 @@ Route::get('product-detail/{name}', [FrontendProductController::class, 'showProd
     Route::get('cart/remove-product/{rowId}', [CartController::class, 'removeProduct'])->name('cart.remove-product');
     Route::get('cart-count', [CartController::class, 'getCartCount'])->name('cart-count');
 
+    // theo dõi đơn hàng
+    Route::get('product-tracking', [ProductTrackController::class, 'index'])->name('product-tracking.index');
+
+
+
+
+
+
+
+
+
     // Route::get('cart/total', [CartController::class, 'cartTotal'])->name('cart.total');
     
 
@@ -98,5 +102,3 @@ Route::get('product-detail/{name}', [FrontendProductController::class, 'showProd
     // Route::get('customer/paypal/payment', [PaymentController::class, 'payWithPaypal'])->name('customer.paypal.payment');
     // Route::get('customer/paypal/cancel', [PaymentController::class, 'paypalCancel'])->name('customer.paypal.cancel');
 
-    // theo dõi đơn hàng
-    Route::get('product-tracking', [ProductTrackController::class, 'index'])->name('product-tracking.index');

@@ -235,7 +235,7 @@
                                             aria-controls="v-pills-profile" aria-selected="false">
                                             <i class="fas fa-list-ul"></i>
                                         </button>
-                                    </div>
+                                    </div>  
                                     {{-- <div class="wsus__topbar_select">
                                         <select class="select_2" name="state">
                                             <option>default shorting</option>
@@ -256,40 +256,159 @@
                                 </div> --}}
                             </div>
                         </div>
+                        {{--  --}}
                         <div class="tab-content" id="v-pills-tabContent">
                             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                                aria-labelledby="v-pills-home-tab">
+                                aria-labelledby="v-pills-home-tab" style="width: 90%">
                                 <div class="row">
-                                    <h2 style="text-align: center">Sữa rửa mặt</h2>
+                                    <h2 style="text-align: center">Nước tẩy trang</h2>
                                     @foreach ($products as $product)
-                                        <div class="col-xl-4  col-sm-6">
-                                            <div class="wsus__product_item">
-                                                <a class="wsus__pro_link" href="product_details.html">
-                                                    <img src="{{ asset($product->link_photo) }}" alt="product"
-                                                        class="img-fluid w-100 img_1" />
-                                                </a>
-                                                <ul class="wsus__single_pro_icon">
-                                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                                class="far fa-eye"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-random"></i></a>
-                                                </ul>
-                                                <div class="wsus__product_details">
-                                                    <a  href="{{ route('product-detail',$product->name) }}">{{ $product->type }} {{ $product->name }}</a>
-                                                    <a class="wsus__pro_name" href="#">{{ $product->skin_problem }}</a>
-                                                    <p class="wsus__price">{{ $product->price }} vnd</p>
+                                        @if ($product->type ==='Nước tẩy trang')
+                                            <div class="col-xl-4  col-sm-6">
+                                                <div class="wsus__product_item">
+                                                    <a class="wsus__pro_link" href="product_details.html">
+                                                        <img src="{{ asset($product->link_photo) }}" alt="product"
+                                                            class="img-fluid w-100 img_1" />
+                                                    </a>
+                                                    <ul class="wsus__single_pro_icon">
+                                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                                                    class="far fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="far fa-heart"></i></a></li>
+                                                        <li><a href="#"><i class="far fa-random"></i></a>
+                                                    </ul>
+                                                    <div class="wsus__product_details">
+                                                        <a  href="{{ route('product-detail',$product->name) }}">{{ $product->type }} {{ $product->name }}</a>
+                                                        <a class="wsus__pro_name" href="#">{{ $product->skin_problem }}</a>
+                                                        <p class="wsus__price">{{ $product->price }} vnd</p>
 
-                                                   
+                                                    
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        
+                                        @endif      
                                     @endforeach
-                             
+
+                                </div>
+                                <div class="row">
+                                    <h2 style="text-align: center">Sữa rửa mặtt</h2>
+                                    @foreach ($products as $product)
+                                        @if ($product->type ==='Sữa rửa mặt')
+                                            <div class="col-xl-4  col-sm-6">
+                                                <div class="wsus__product_item">
+                                                    <a class="wsus__pro_link" href="product_details.html">
+                                                        <img src="{{ asset($product->link_photo) }}" alt="product"
+                                                            class="img-fluid w-100 img_1" />
+                                                    </a>
+                                                    <ul class="wsus__single_pro_icon">
+                                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                                                    class="far fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="far fa-heart"></i></a></li>
+                                                        <li><a href="#"><i class="far fa-random"></i></a>
+                                                    </ul>
+                                                    <div class="wsus__product_details">
+                                                        <a  href="{{ route('product-detail',$product->name) }}">{{ $product->type }} {{ $product->name }}</a>
+                                                        <a class="wsus__pro_name" href="#">{{ $product->skin_problem }}</a>
+                                                        <p class="wsus__price">{{ $product->price }} vnd</p>
+
+                                                    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif      
+                                    @endforeach
+
+                                </div>
+                                <div class="row">
+                                    <h2 style="text-align: center">Kem chống nắng</h2>
+                                    @foreach ($products as $product)
+                                        @if ($product->type ==='Kem chống nắng')
+                                            <div class="col-xl-4  col-sm-6">
+                                                <div class="wsus__product_item">
+                                                    <a class="wsus__pro_link" href="product_details.html">
+                                                        <img src="{{ asset($product->link_photo) }}" alt="product"
+                                                            class="img-fluid w-100 img_1" />
+                                                    </a>
+                                                    <ul class="wsus__single_pro_icon">
+                                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                                                    class="far fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="far fa-heart"></i></a></li>
+                                                        <li><a href="#"><i class="far fa-random"></i></a>
+                                                    </ul>
+                                                    <div class="wsus__product_details">
+                                                        <a  href="{{ route('product-detail',$product->name) }}">{{ $product->type }} {{ $product->name }}</a>
+                                                        <a class="wsus__pro_name" href="#">{{ $product->skin_problem }}</a>
+                                                        <p class="wsus__price">{{ $product->price }} vnd</p>
+
+                                                    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif      
+                                    @endforeach
+
+                                </div>
+                                <div class="row">
+                                    <h2 style="text-align: center">Serum</h2>
+                                    @foreach ($products as $product)
+                                        @if ($product->type ==='Serum')
+                                            <div class="col-xl-4  col-sm-6">
+                                                <div class="wsus__product_item">
+                                                    <a class="wsus__pro_link" href="product_details.html">
+                                                        <img src="{{ asset($product->link_photo) }}" alt="product"
+                                                            class="img-fluid w-100 img_1" />
+                                                    </a>
+                                                    <ul class="wsus__single_pro_icon">
+                                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                                                    class="far fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="far fa-heart"></i></a></li>
+                                                        <li><a href="#"><i class="far fa-random"></i></a>
+                                                    </ul>
+                                                    <div class="wsus__product_details">
+                                                        <a  href="{{ route('product-detail',$product->name) }}">{{ $product->type }} {{ $product->name }}</a>
+                                                        <a class="wsus__pro_name" href="#">{{ $product->skin_problem }}</a>
+                                                        <p class="wsus__price">{{ $product->price }} vnd</p>
+
+                                                    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif      
+                                    @endforeach
+
+                                </div>
+                                <div class="row">
+                                    <h2 style="text-align: center">Kem dưỡng ẩm</h2>
+                                    @foreach ($products as $product)
+                                        @if ($product->type ==='Kem dưỡng ẩm')
+                                            <div class="col-xl-4  col-sm-6">
+                                                <div class="wsus__product_item">
+                                                    <a class="wsus__pro_link" href="product_details.html">
+                                                        <img src="{{ asset($product->link_photo) }}" alt="product"
+                                                            class="img-fluid w-100 img_1" />
+                                                    </a>
+                                                    <ul class="wsus__single_pro_icon">
+                                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                                                    class="far fa-eye"></i></a></li>
+                                                        <li><a href="#"><i class="far fa-heart"></i></a></li>
+                                                        <li><a href="#"><i class="far fa-random"></i></a>
+                                                    </ul>
+                                                    <div class="wsus__product_details">
+                                                        <a  href="{{ route('product-detail',$product->name) }}">{{ $product->type }} {{ $product->name }}</a>
+                                                        <a class="wsus__pro_name" href="#">{{ $product->skin_problem }}</a>
+                                                        <p class="wsus__price">{{ $product->price }} vnd</p>
+
+                                                    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif      
+                                    @endforeach
 
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+
+
+                            {{-- <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
                                 aria-labelledby="v-pills-profile-tab">
                                 <div class="row">
                                     @foreach ($products as $product)
@@ -326,7 +445,7 @@
                                     @endforeach
                                   
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

@@ -10,8 +10,8 @@
             <h3><i class="far fa-user"></i>Thông tin cá nhân</h3>
             <div class="wsus__dashboard_profile">
               <div class="wsus__dash_pro_area">
-                <h4>Information</h4>
-                <form action="{{ route('customer.profile.update') }}" method="POST" >
+                <h4>Thông tin</h4>
+                <form action="{{ route('customer.profile.update') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                         <div class="col-xl-6 col-md-6">
@@ -40,7 +40,7 @@
                         <div class="col-xl-6 col-md-6">
                             <div class="wsus__dash_pro_single">
                               <i class="fal fa-envelope-open"></i>
-                              <input type="text" placeholder="PostCode" name="postcode"  value="{{ Auth::user()->postcode }}">
+                              <input type="number" minlength="12" maxlength="12" placeholder="PostCode" name="postcode"  value="{{ Auth::user()->postcode }}">
                             </div>
                         </div>
                         <div class="col-xl-6 col-md-6">
@@ -50,7 +50,7 @@
                             </div>
                         </div>
                         <div class="col-xl-12">
-                            <button class="common_btn mb-4 mt-2" type="submit">upload</button>
+                            <button class="common_btn mb-4 mt-2" type="submit">Cập nhật</button>
                         </div>
                 </form>
 
@@ -58,7 +58,7 @@
                       <form action="{{ route('customer.profile.update.password') }}" method="POST">
                         @csrf
                           <div class="row">
-                            <h4>Update Password</h4>
+                            <h4>Cập nhật mật khẩu</h4>
                             <div class="col-xl-4 col-md-6">
                               <div class="wsus__dash_pro_single">
                                 <i class="fas fa-unlock-alt"></i>
@@ -68,7 +68,7 @@
                             <div class="col-xl-4 col-md-6">
                               <div class="wsus__dash_pro_single">
                                 <i class="fas fa-unlock-alt"></i>
-                                <input type="password" placeholder="New Pass" name="new_password">
+                                <input type="password" placeholder="New Pass" name="password">
                               </div>
                             </div>
                             <div class="col-xl-4 col-md-6">
@@ -78,7 +78,7 @@
                               </div>
                             </div>
                             <div class="col-xl-12">
-                              <button class="common_btn" type="submit">upload</button>
+                              <button class="common_btn" type="submit">Cập nhật</button>
                             </div>
                           </div>
                       </form>

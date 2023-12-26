@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('postcode');
             $table->string('email')->unique();
             $table->date('birthday');
-            $table->double('total');
+            $table->double('total')->default(0);
             $table->boolean('enable');
             $table->string('password');
             $table->enum('role', ['admin','customer'])->default('customer');
