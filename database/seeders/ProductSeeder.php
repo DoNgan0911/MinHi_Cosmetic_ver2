@@ -58,7 +58,7 @@ class ProductSeeder extends Seeder
             'link_photo' => 'Nivea.png',
         ]);
 
-        Product::create([
+        Product::create([//4
             'name' => 'Sữa rửa mặt Oxy',
             'type' => 'Sữa rửa mặt',
             'provider' => 'Bici Cosmetic',
@@ -71,7 +71,7 @@ class ProductSeeder extends Seeder
             'price_todel' => 1750000,
             'link_photo' => 'Oxy.png',
         ]);
-//         Product::create([
+//         Product::create([//5
 //             'name' => 'Kem chống nắng Anessa',
 //             'type' => 'Kem chống nắng',
 //             'provider' => 'Olay',
@@ -83,7 +83,7 @@ class ProductSeeder extends Seeder
 //             'price' => 347000, // Không có giá khuyến mãi
 //             'link_photo' => 'Anessa.png',
 //         ]);
-//         Product::create([
+//         Product::create([//6
 //             'name' => 'Kem chống nắng Skin1004',
 //             'type' => 'Kem chống nắng',
 //             'provider' => 'Olay',
@@ -111,7 +111,7 @@ class ProductSeeder extends Seeder
 //         ]);
         
       
-//         Product::create([
+//         Product::create([// 8
 //             'name' => 'Tinh Chất Chống Nắng Sunplay',
 //             'type' => 'Kem chống nắng',
 //             'provider' => 'VFU Shop',
@@ -124,7 +124,7 @@ class ProductSeeder extends Seeder
 //             'price_todel' => 195000,
 //             'link_photo' => 'Sunplay.png',
 //         ]);
-//         Product::create([
+//         Product::create([//9
 //             'name' => 'Serum Garnier',
 //             'type' => 'Serum',
 //             'provider' => 'Revlon',
@@ -166,7 +166,7 @@ class ProductSeeder extends Seeder
 //             'link_photo' => 'SerumGoodnDoc.png', // Thay đổi tên ảnh
 //         ]);
         
-//         // Sửa thông tin cho sản phẩm "Serum Klairs"
+//         // Sửa thông tin cho sản phẩm "Serum Klairs"// 12
 //         Product::create([
 //             'name' => 'Serum Klairs',
 //             'type' => 'Serum',
@@ -181,7 +181,7 @@ class ProductSeeder extends Seeder
 //             'link_photo' => 'SerumKlairs.png', 
 //         ]);
 //         // Sản phẩm "Kem Dưỡng Ẩm Neutrogena"
-// Product::create([
+// Product::create([//13
 //     'name' => 'Kem Dưỡng Ẩm Neutrogena',
 //     'type' => 'Kem dưỡng ẩm',
 //     'provider' => 'Olay',
@@ -195,7 +195,7 @@ class ProductSeeder extends Seeder
 //     'link_photo' => 'AmNeutrogena.png',
 // ]);
 
-// // Sản phẩm "Sữa Dưỡng Ẩm Embryolisse"
+// // Sản phẩm "Sữa Dưỡng Ẩm Embryolisse"//14
 // Product::create([
 //     'name' => 'Sữa Dưỡng Ẩm Embryolisse',
 //     'type' => 'Kem dưỡng ẩm',
@@ -210,7 +210,7 @@ class ProductSeeder extends Seeder
 //     'link_photo' => 'AmEmbryolisse.png',
 // ]);
 
-// // Sản phẩm "Kem Dưỡng ẩm Vichy"
+// // Sản phẩm "Kem Dưỡng ẩm Vichy"//15
 // Product::create([
 //     'name' => 'Kem Dưỡng ẩm Vichy',
 //     'type' => 'Kem dưỡng ẩm',
@@ -284,7 +284,7 @@ class ProductSeeder extends Seeder
 // ]);
 
 // // Sản phẩm "Nước Tẩy Trang Garnier - Bioderma"
-// Product::create([
+// Product::create([//20
 //     'name' => 'Nước Tẩy Trang Garnier - Bioderma',
 //     'type' => 'Tẩy trang',
 //     'provider' => 'Olay',
@@ -298,7 +298,7 @@ class ProductSeeder extends Seeder
 // ]);
 
 // // Sản phẩm "Nước Tẩy Trang L'Oreal"
-// Product::create([
+// Product::create([//21
 //     'name' => 'Nước Tẩy Trang L\'Oreal',
 //     'type' => 'Tẩy trang',
 //     'provider' => 'Bici Cosmetic',
